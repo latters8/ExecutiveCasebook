@@ -1280,4 +1280,9 @@ body.perspective-strategy {
   .hero__text p, .card p, .case-card__block p, .value-item { font-size: 1rem; }
   .competency-card p { font-size: 0.9rem; }
   .hero__text-lead { font-size: 1.1rem !important; }
+   /* ============================================================
+   FIX: перенос строк в цитате
+   ============================================================ */
+.hero__text-lead {
+  white-space: pre-line !important;
 }
