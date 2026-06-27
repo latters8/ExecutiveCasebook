@@ -2626,45 +2626,54 @@ FIX: БУРГЕР-МЕНЮ ДЛЯ МОБИЛЬНЫХ
   }
 
   /* Навигация — скрыта по умолчанию */
-  .nav {
-    display: none !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(10, 10, 10, 0.98) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 24px !important;
-    padding: 40px !important;
-    z-index: 1000 !important;
-    transition: opacity 0.4s ease, transform 0.4s ease !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    transform: scale(0.95) !important;
-  }
+.nav {
+  display: none !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  min-height: -webkit-fill-available !important;
+  background: rgba(10, 10, 10, 0.98) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 24px !important;
+  padding: 40px 20px !important;
+  z-index: 1000 !important;
+  transition: opacity 0.4s ease, transform 0.4s ease !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: scale(0.95) !important;
+  overflow-y: auto !important;
+}
 
-  /* Открытое меню */
-  .nav.open {
-    display: flex !important;
-    opacity: 1 !important;
-    pointer-events: all !important;
-    transform: scale(1) !important;
-  }
+/* Открытое меню */
+.nav.open {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+  transform: scale(1) !important;
+}
 
-  /* Ссылки в меню */
-  .nav a {
-    font-size: 1.6rem !important;
-    color: #EDEDED !important;
-    font-weight: 500 !important;
-    padding: 8px 0 !important;
-    transition: color 0.3s ease !important;
-    letter-spacing: 0.02em !important;
-  }
+/* Ссылки в меню */
+.nav a {
+  font-size: 1.6rem !important;
+  color: #EDEDED !important;
+  font-weight: 500 !important;
+  padding: 12px 0 !important;
+  transition: color 0.3s ease !important;
+  letter-spacing: 0.02em !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 300px !important;
+}
 
   .nav a:hover {
     color: var(--accent, #C9A84C) !important;
