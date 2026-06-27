@@ -478,7 +478,7 @@ function renderNav() {
 
 function renderPerspective() {
   const d = getLangData();
-  document.getElementById('perspectiveLabel').textContent = d.perspectiveLabel;
+  document.getElementById('perspectiveLabel').innerHTML = `<span class="pulse-text">${d.perspectiveLabel}</span>`;
   document.getElementById('perspectiveSub').textContent = d.perspectiveSub;
   const labels = ['pBusinessLabel','pMarketingLabel','pStrategyLabel'];
   d.pLabels.forEach((label, i) => {
