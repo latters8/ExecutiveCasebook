@@ -753,12 +753,12 @@ function loadSaved() {
 }
 
 // ============================================================
-// 6. АНИМАЦИЯ ДЛЯ ПАУТИНЫ
+// 6. АНИМАЦИЯ ДЛЯ ГЕОМЕТРИЧЕСКОЙ СЕТКИ
 // ============================================================
 
 function initMetricsCloud() {
   const nodes = document.querySelectorAll('.metric-node');
-  const lines = document.querySelectorAll('.cloud-line');
+  const diagonals = document.querySelector('.cloud-diagonals');
   const orbits = document.querySelectorAll('.cloud-orbit');
 
   if (!nodes.length) return;
@@ -787,7 +787,7 @@ function initMetricsCloud() {
         if (entry.isIntersecting) {
           visibleCount++;
           if (visibleCount >= Math.ceil(totalNodes * 0.6)) {
-            lines.forEach(line => line.classList.add('active'));
+            if (diagonals) diagonals.classList.add('active');
             orbits.forEach(orbit => orbit.classList.add('active'));
           }
           checkObserver.unobserve(entry.target);
@@ -909,9 +909,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
   // ============================================================
-  // ПАУТИНА
+  // ГЕОМЕТРИЧЕСКАЯ СЕТКА
   // ============================================================
   initMetricsCloud();
 
-  console.log('✅ Executive Casebook v18 — исправлены бренды и паутина');
+  console.log('✅ Executive Casebook v19 — геометрическая сетка + слайдер');
 });
