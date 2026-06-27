@@ -541,10 +541,12 @@ function renderContact() {
 
 function renderBrands() {
   const d = getLangData();
-  document.getElementById('brandsLabel').textContent = d.brandsLabel;
-  document.getElementById('brandsSub').textContent = d.brandsSub;
-
+  const labelEl = document.getElementById('brandsLabel');
+  const subEl = document.getElementById('brandsSub');
   const track = document.getElementById('brandsTrack');
+  
+  if (labelEl) labelEl.textContent = d.brandsLabel;
+  if (subEl) subEl.textContent = d.brandsSub;
   if (!track) return;
   
   const brands = d.brandsList || [];
@@ -763,7 +765,6 @@ function initMetricsCloud() {
 
   if (!nodes.length) return;
 
-  // Появление узлов
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -778,7 +779,6 @@ function initMetricsCloud() {
 
   nodes.forEach(node => observer.observe(node));
 
-  // Активация линий и орбит после появления 60% узлов
   let visibleCount = 0;
   const totalNodes = nodes.length;
   nodes.forEach(node => {
@@ -804,9 +804,6 @@ function initMetricsCloud() {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  // ============================================================
-  // ПЕРЕКЛЮЧЕНИЕ ПЕРСПЕКТИВ
-  // ============================================================
   const buttons = document.querySelectorAll('.perspective-option');
 
   buttons.forEach(function(btn) {
@@ -823,14 +820,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // ============================================================
-  // ЗАГРУЗКА СОХРАНЁННЫХ НАСТРОЕК
-  // ============================================================
   loadSaved();
 
-  // ============================================================
-  // ЯЗЫК
-  // ============================================================
   document.getElementById('langSwitch').addEventListener('click', function() {
     switchLang(currentLang === 'ru' ? 'en' : 'ru');
   });
@@ -839,9 +830,6 @@ document.addEventListener('DOMContentLoaded', function() {
     switchLang(currentLang === 'ru' ? 'en' : 'ru');
   });
 
-  // ============================================================
-  // BURGER
-  // ============================================================
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
 
@@ -857,9 +845,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // ============================================================
-  // BACK TO TOP
-  // ============================================================
   const backBtn = document.getElementById('backToTop');
   window.addEventListener('scroll', function() {
     backBtn.classList.toggle('visible', window.pageYOffset > 400);
@@ -868,17 +853,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // ============================================================
-  // HEADER SCROLL
-  // ============================================================
   const header = document.getElementById('header');
   window.addEventListener('scroll', function() {
     header.classList.toggle('scrolled', window.pageYOffset > 50);
   });
 
-  // ============================================================
-  // SMOOTH SCROLL
-  // ============================================================
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -892,9 +871,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // ============================================================
-  // SCROLL REVEAL
-  // ============================================================
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
@@ -908,9 +884,6 @@ document.addEventListener('DOMContentLoaded', function() {
       observer.observe(el);
     });
 
-  // ============================================================
-  // ГЕОМЕТРИЧЕСКАЯ СЕТКА
-  // ============================================================
   initMetricsCloud();
 
   console.log('✅ Executive Casebook v19 — геометрическая сетка + слайдер');
