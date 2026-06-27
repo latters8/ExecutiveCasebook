@@ -886,23 +886,6 @@ document.addEventListener('DOMContentLoaded', () => {
     formId: 'mqevqjqz'
   });
 
-  // Дополнительный статус для обратной связи (на случай, если нужно)
-  const form = document.getElementById('contactForm');
-  const statusEl = document.getElementById('formStatus');
-
-  if (form && statusEl) {
-    // Formspree сам управляет состоянием через data-fs-* атрибуты,
-    // но мы можем добавить дополнительный слушатель для совместимости
-    form.addEventListener('fs:success', function() {
-      statusEl.textContent = '✅ Сообщение успешно отправлено!';
-      statusEl.className = 'contact-form__status';
-    });
-    form.addEventListener('fs:error', function(e) {
-      statusEl.textContent = '❌ Ошибка при отправке. Попробуйте позже.';
-      statusEl.className = 'contact-form__status error';
-    });
-  }
-
   loadSaved();
 
   // Scroll reveal для остальных элементов
