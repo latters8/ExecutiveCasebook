@@ -305,20 +305,6 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 12px;
 }
 
-/* Скрытие на мобильных при скролле вниз */
-@media (max-width: 768px) {
-  .perspective-switch-wrapper {
-    top: 60px;
-    padding: 14px 0 10px;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-  }
-  .perspective-switch-wrapper.hidden {
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-  }
-}
-
 .perspective-switch__label {
   font-size: 0.8rem;
   text-transform: uppercase;
