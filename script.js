@@ -549,6 +549,9 @@ function renderBrands() {
   if (subEl) subEl.textContent = d.brandsSub;
   if (!track) return;
   
+  // Если уже заполнен — не перезаписываем
+  if (track.children.length > 0) return;
+  
   const brands = d.brandsList || [];
   const doubled = [...brands, ...brands];
   track.innerHTML = doubled.map(brand => `<span class="brand-slide">${brand}</span>`).join('');
@@ -888,3 +891,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
   console.log('✅ Executive Casebook v19 — геометрическая сетка + слайдер');
 });
+
+// ============================================================
+// 8. ФОРСИРОВАННАЯ ЗАГРУЗКА СЛАЙДЕРА (если не появился)
+// ============================================================
+(function forceBrands() {
+  function renderBrandsForce() {
+    const track = document.getElementById('brandsTrack');
+    const label = document.getElementById('brandsLabel');
+    const sub = document.getElementById('brandsSub');
+    
+    if (!track) {
+      setTimeout(renderBrandsForce, 300);
+      return;
+    }
+    
+    if (track.children.length > 0) return;
+    
+    const d = getLangData();
+    if (!d || !d.brandsList) {
+      setTimeout(renderBrandsForce, 300);
+      return;
+    }
+    
+    if (label) label.textContent = d.brandsLabel;
+    if (sub) sub.textContent = d.brandsSub;
+    
+    const brands = d.brandsList || [];
+    const doubled = [...brands, ...brands];
+    track.innerHTML = doubled.map(b => `<span class="brand-slide">${b}</span>`).join('');
+    
+    console.log('✅ Слайдер загружен принудительно');
+  }
+  
+  // Запускаем сразу и через 500ms для надёжности
+  renderBrandsForce();
+  setTimeout(renderBrandsForce, 500);
+})();
