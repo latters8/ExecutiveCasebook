@@ -104,7 +104,7 @@ const data = {
       strategy: { task: 'Стратегическая задача', solution: 'Стратегическое решение', result: 'Результат' }
     },
     brandsLabel: 'Бренды',
-    brandsSub: 'с которыми я работал',
+    brandsSub: 'С которыми я работал',
     brandsList: ['Fender', 'Yamaha', 'Marshall', 'Mesa Boogie', 'Korg', 'Vox', 'Roland', 'Boss', 'Kawai', 'Gibson', 'Epiphone', 'Ibanez', 'Schecter', 'Orange', 'Blackstar', 'JBL', 'Fishman', 'Sennheiser', 'AKG', 'FBT', 'Behringer', 'Ampeg', 'Line 6', 'Fender Amps', 'Jackson', 'Charvel', 'Gretsch', 'Squier', 'Mono', 'Takamine', 'Soundcraft', 'DBX', 'DigiTech', 'TC Electronic', 'PreSonus', 'Focusrite', 'Novation', 'Akai Professional', 'Native Instruments', 'Ableton', 'Universal Audio', "D'Addario", 'Involight', 'YME audiotechnik', 'Anzhee']
   },
   en: {
@@ -431,13 +431,8 @@ const casesList = {
 let currentLang = 'ru';
 let currentPerspective = 'business';
 
-function getLangData() {
-  return data[currentLang];
-}
-
-function getCaseBlocks() {
-  return data[currentLang].caseBlocks[currentPerspective] || data[currentLang].caseBlocks.business;
-}
+function getLangData() { return data[currentLang]; }
+function getCaseBlocks() { return data[currentLang].caseBlocks[currentPerspective] || data[currentLang].caseBlocks.business; }
 
 // ============================================================
 // 4. РЕНДЕРИНГ
@@ -554,7 +549,6 @@ function renderBrands() {
   if (subEl) subEl.textContent = d.brandsSub;
   if (!track) return;
   
-  // Если уже заполнен — не перезаписываем
   if (track.children.length > 0) return;
   
   const brands = d.brandsList || [];
@@ -898,7 +892,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================================
-// 8. ФОРСИРОВАННАЯ ЗАГРУЗКА СЛАЙДЕРА (если не появился)
+// 8. ФОРСИРОВАННАЯ ЗАГРУЗКА СЛАЙДЕРА
 // ============================================================
 (function forceBrands() {
   function renderBrandsForce() {
