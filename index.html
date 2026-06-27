@@ -59,7 +59,7 @@
 </header>
 
 <!-- ════════════════════════════════════════════════════════════
-     HERO — ИСПРАВЛЕННАЯ ВЁРСТКА
+     HERO
      ════════════════════════════════════════════════════════════ -->
 <section class="hero" id="hero">
   <div class="hero__bg-image" style="background-image: url('assets/hero-placeholder.svg');"></div>
@@ -67,21 +67,20 @@
 
   <div class="container">
     <div class="hero__layout">
-      <!-- ЛЕВАЯ КОЛОНКА: текст + метрики + мысль -->
       <div class="hero__content">
         <div class="hero__tag" id="heroTag">14+ лет практики · B2B · B2C · Business Development</div>
         <h1 class="hero__title" id="heroTitle">
           Бизнес — это система,<br>а не набор инструментов.
         </h1>
-<div class="hero__text" id="heroText">
-<p class="hero__text-lead">
-  «Рост замедляется не из-за отсутствия идей,<br>
-  а потому, что маркетинг, продажи и стратегия работают изолированно.»
-</p>
-  <p>Устойчивое развитие требует единой модели, где каждое решение усиливает другие.</p>
-  <p>Маркетинг — это не про инструменты. Это про понимание людей и их потребностей.</p>
-</div>
-        <!-- МЕТРИКИ (теперь внутри hero__content, под текстом) -->
+        <div class="hero__text" id="heroText">
+          <p class="hero__text-lead">
+            «Рост замедляется не из-за отсутствия идей.<br>
+            А потому, что маркетинг, продажи и стратегия работают изолированно.»
+          </p>
+          <p>Устойчивое развитие требует единой модели, где каждое решение усиливает другие.</p>
+          <p>Маркетинг — это не про инструменты. Это про понимание людей и их потребностей.</p>
+        </div>
+
         <div class="hero-metrics" id="heroMetrics">
           <div class="hero-metric">
             <div class="hero-metric__number">14+</div>
@@ -110,7 +109,6 @@
         </div>
       </div>
 
-      <!-- ПРАВАЯ КОЛОНКА: фото -->
       <div class="hero__visual" aria-hidden="true">
         <div class="hero__photo-card">
           <img src="assets/picture.JPG" alt="Фото Владимира Барбашина">
@@ -158,7 +156,7 @@
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
-     DIGITAL FOOTPRINT — GLASS-КАРТОЧКИ
+     DIGITAL FOOTPRINT — ОБЛАКО СВЯЗЕЙ
      ════════════════════════════════════════════════════════════ -->
 <section class="section section--dark" id="metrics">
   <div class="section-bg" style="background-image: url('assets/metrics-placeholder.svg'); opacity:0.04;"></div>
@@ -166,67 +164,73 @@
     <h2 class="section-title" id="metricsTitle">Цифровой <span class="highlight">след</span></h2>
     <p class="section-sub" id="metricsSub">Реальные результаты, измеряемые в цифрах</p>
 
-    <div class="metrics-glass-grid">
-      <!-- 12 метрик в стеклянных карточках -->
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 30% 20%, rgba(201,168,76,0.25), transparent 60%);"></div>
-        <span class="metric-glass__number">14+</span>
-        <span class="metric-glass__label" id="n1">лет опыта</span>
+    <div class="metrics-cloud" id="metricsCloud">
+      <!-- SVG-линии соединений -->
+      <svg class="metrics-cloud__svg" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid meet">
+        <line class="cloud-line" x1="450" y1="250" x2="120" y2="80" />
+        <line class="cloud-line" x1="450" y1="250" x2="280" y2="60" />
+        <line class="cloud-line" x1="450" y1="250" x2="450" y2="90" />
+        <line class="cloud-line" x1="450" y1="250" x2="620" y2="60" />
+        <line class="cloud-line" x1="450" y1="250" x2="760" y2="180" />
+        <line class="cloud-line" x1="450" y1="250" x2="180" y2="200" />
+        <line class="cloud-line" x1="450" y1="250" x2="300" y2="380" />
+        <line class="cloud-line" x1="450" y1="250" x2="120" y2="400" />
+        <line class="cloud-line" x1="450" y1="250" x2="450" y2="420" />
+        <line class="cloud-line" x1="450" y1="250" x2="720" y2="320" />
+        <line class="cloud-line" x1="450" y1="250" x2="760" y2="400" />
+        <line class="cloud-line" x1="450" y1="250" x2="560" y2="290" />
+        <!-- Центральная точка -->
+        <circle class="cloud-center" cx="450" cy="250" r="6" />
+      </svg>
+
+      <!-- Метрики-узлы -->
+      <div class="metric-node" style="left:10%; top:12%;" data-delay="0">
+        <span class="metric-node__number">14+</span>
+        <span class="metric-node__label" id="n1">лет опыта</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 70% 40%, rgba(74,158,255,0.2), transparent 55%);"></div>
-        <span class="metric-glass__number">2+ млрд</span>
-        <span class="metric-glass__label" id="n2">оборот (₽)</span>
+      <div class="metric-node" style="left:26%; top:4%;" data-delay="1">
+        <span class="metric-node__number">2+ млрд</span>
+        <span class="metric-node__label" id="n2">оборот (₽)</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 20% 70%, rgba(167,139,250,0.2), transparent 60%);"></div>
-        <span class="metric-glass__number">100+</span>
-        <span class="metric-glass__label" id="n3">брендов</span>
+      <div class="metric-node" style="left:45%; top:12%;" data-delay="2">
+        <span class="metric-node__number">100+</span>
+        <span class="metric-node__label" id="n3">брендов</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 80% 80%, rgba(201,168,76,0.2), transparent 55%);"></div>
-        <span class="metric-glass__number">15 000+</span>
-        <span class="metric-glass__label" id="n4">SKU</span>
+      <div class="metric-node" style="left:63%; top:4%;" data-delay="3">
+        <span class="metric-node__number">15 000+</span>
+        <span class="metric-node__label" id="n4">SKU</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 40% 30%, rgba(74,158,255,0.2), transparent 60%);"></div>
-        <span class="metric-glass__number">1 300+</span>
-        <span class="metric-glass__label" id="n5">дилеров</span>
+      <div class="metric-node" style="left:80%; top:22%;" data-delay="4">
+        <span class="metric-node__number">1 300+</span>
+        <span class="metric-node__label" id="n5">дилеров</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 60% 70%, rgba(167,139,250,0.2), transparent 55%);"></div>
-        <span class="metric-glass__number">+30%</span>
-        <span class="metric-glass__label" id="n6">рост лидов</span>
+      <div class="metric-node" style="left:16%; top:44%;" data-delay="5">
+        <span class="metric-node__number">+30%</span>
+        <span class="metric-node__label" id="n6">рост лидов</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 30% 50%, rgba(201,168,76,0.2), transparent 60%);"></div>
-        <span class="metric-glass__number">+310</span>
-        <span class="metric-glass__label" id="n7">пунктов ИКС</span>
+      <div class="metric-node" style="left:30%; top:78%;" data-delay="6">
+        <span class="metric-node__number">+310</span>
+        <span class="metric-node__label" id="n7">пунктов ИКС</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 70% 30%, rgba(74,158,255,0.2), transparent 55%);"></div>
-        <span class="metric-glass__number">+20%</span>
-        <span class="metric-glass__label" id="n8">рост продаж</span>
+      <div class="metric-node" style="left:55%; top:62%;" data-delay="7">
+        <span class="metric-node__number">+20%</span>
+        <span class="metric-node__label" id="n8">рост продаж</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 20% 60%, rgba(167,139,250,0.2), transparent 60%);"></div>
-        <span class="metric-glass__number">40+</span>
-        <span class="metric-glass__label" id="n9">магазинов</span>
+      <div class="metric-node" style="left:76%; top:74%;" data-delay="8">
+        <span class="metric-node__number">40+</span>
+        <span class="metric-node__label" id="n9">магазинов</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 80% 20%, rgba(201,168,76,0.2), transparent 55%);"></div>
-        <span class="metric-glass__number">300+</span>
-        <span class="metric-glass__label" id="n10">сотрудников</span>
+      <div class="metric-node" style="left:84%; top:86%;" data-delay="9">
+        <span class="metric-node__number">300+</span>
+        <span class="metric-node__label" id="n10">сотрудников</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 50% 80%, rgba(74,158,255,0.2), transparent 60%);"></div>
-        <span class="metric-glass__number">6+ млн</span>
-        <span class="metric-glass__label" id="n11">бюджет</span>
+      <div class="metric-node" style="left:6%; top:84%;" data-delay="10">
+        <span class="metric-node__number">6+ млн</span>
+        <span class="metric-node__label" id="n11">бюджет</span>
       </div>
-      <div class="metric-glass">
-        <div class="metric-glass__glow" style="background: radial-gradient(circle at 40% 40%, rgba(167,139,250,0.2), transparent 55%);"></div>
-        <span class="metric-glass__number">AI</span>
-        <span class="metric-glass__label" id="n12">внедрение</span>
+      <div class="metric-node" style="left:48%; top:88%;" data-delay="11">
+        <span class="metric-node__number">AI</span>
+        <span class="metric-node__label" id="n12">внедрение</span>
       </div>
     </div>
   </div>
@@ -269,6 +273,66 @@
       <p id="futureP1">За последние годы бизнес изменился сильнее, чем за предыдущие десятилетия. Изменились технологии, ожидания клиентов, способы принятия решений. Появился искусственный интеллект, автоматизация стала доступной практически каждой компании.</p>
       <p style="margin-top:0.8rem;" id="futureP2">При этом фундамент бизнеса остался прежним: компания создаёт ценность для клиента, команда реализует стратегию, руководитель принимает решения в условиях неопределённости. Меняются инструменты, но не меняются принципы.</p>
       <p style="margin-top:0.8rem; color: rgba(255,255,255,0.7);" id="futureP3"><strong>Устойчивый и перспективный прогресс любой компании сегодня лежит на пересечении бизнеса, управления и технологий.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     BRANDS SLIDER — ЛЕНТА БРЕНДОВ
+     ════════════════════════════════════════════════════════════ -->
+<section class="section brands-slider" id="brands">
+  <div class="container">
+    <div class="brands-slider__header">
+      <span class="brands-slider__label">Бренды</span>
+      <span class="brands-slider__sub">С которыми я работал</span>
+    </div>
+    <div class="brands-slider__track-wrapper">
+      <div class="brands-slider__track" id="brandsTrack">
+        <!-- Бренды из INVASK -->
+        <span class="brand-slide">AKG</span>
+        <span class="brand-slide">JBL</span>
+        <span class="brand-slide">Yamaha</span>
+        <span class="brand-slide">Shure</span>
+        <span class="brand-slide">Sennheiser</span>
+        <span class="brand-slide">RCF</span>
+        <span class="brand-slide">Behringer</span>
+        <span class="brand-slide">Mackie</span>
+        <span class="brand-slide">Korg</span>
+        <span class="brand-slide">Roland</span>
+        <!-- Бренды из A&T Trade (Fender и другие) -->
+        <span class="brand-slide">Fender</span>
+        <span class="brand-slide">Jackson</span>
+        <span class="brand-slide">Charvel</span>
+        <span class="brand-slide">Gretsch</span>
+        <span class="brand-slide">Squier</span>
+        <!-- Бренды из ANZHEE -->
+        <span class="brand-slide">ANZHEE</span>
+        <span class="brand-slide">Soundking</span>
+        <span class="brand-slide">Stairville</span>
+        <span class="brand-slide">ADJ</span>
+        <span class="brand-slide">Chauvet</span>
+        <!-- Дублируем для бесшовной анимации -->
+        <span class="brand-slide">AKG</span>
+        <span class="brand-slide">JBL</span>
+        <span class="brand-slide">Yamaha</span>
+        <span class="brand-slide">Shure</span>
+        <span class="brand-slide">Sennheiser</span>
+        <span class="brand-slide">RCF</span>
+        <span class="brand-slide">Behringer</span>
+        <span class="brand-slide">Mackie</span>
+        <span class="brand-slide">Korg</span>
+        <span class="brand-slide">Roland</span>
+        <span class="brand-slide">Fender</span>
+        <span class="brand-slide">Jackson</span>
+        <span class="brand-slide">Charvel</span>
+        <span class="brand-slide">Gretsch</span>
+        <span class="brand-slide">Squier</span>
+        <span class="brand-slide">ANZHEE</span>
+        <span class="brand-slide">Soundking</span>
+        <span class="brand-slide">Stairville</span>
+        <span class="brand-slide">ADJ</span>
+        <span class="brand-slide">Chauvet</span>
+      </div>
     </div>
   </div>
 </section>
