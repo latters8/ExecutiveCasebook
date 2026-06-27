@@ -759,7 +759,7 @@ COMPETENCIES
 }
 
 /* ============================================================
-DIGITAL FOOTPRINT — ПАУТИНА
+DIGITAL FOOTPRINT — ГЕОМЕТРИЧЕСКАЯ СЕТКА
 ============================================================ */
 
 .metrics-cloud {
@@ -780,12 +780,20 @@ DIGITAL FOOTPRINT — ПАУТИНА
   z-index: 0;
 }
 
+/* ГЕКСАГОНАЛЬНАЯ СЕТКА (стили для pattern) */
+.cloud-hex {
+  fill: none;
+  stroke: var(--accent, #C9A84C);
+  stroke-width: 0.4;
+  opacity: 0.08;
+}
+
 /* ОРБИТЫ */
 .cloud-orbit {
   fill: none;
   stroke: var(--accent, #C9A84C);
   stroke-width: 0.5;
-  opacity: 0.06;
+  opacity: 0.05;
   transition: opacity 0.8s ease;
 }
 
@@ -793,16 +801,16 @@ DIGITAL FOOTPRINT — ПАУТИНА
   opacity: 0.12;
 }
 
-/* ДИАГОНАЛЬНЫЕ ЛИНИИ ПАУТИНЫ */
-.cloud-diagonal {
+/* ДИАГОНАЛЬНЫЕ ЛИНИИ */
+.cloud-diagonals line {
   stroke: var(--accent, #C9A84C);
   stroke-width: 0.4;
-  opacity: 0.06;
+  opacity: 0.05;
   transition: opacity 0.8s ease;
 }
 
-.cloud-diagonal.active {
-  opacity: 0.15;
+.cloud-diagonals.active line {
+  opacity: 0.12;
 }
 
 /* ЦЕНТР */
