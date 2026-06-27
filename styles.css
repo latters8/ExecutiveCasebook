@@ -2584,3 +2584,115 @@ FIX: ВЕРТИКАЛЬНОЕ ОТОБРАЖЕНИЕ (МОБИЛЬНЫЕ) — Ж
     font-size: 0.8rem !important;
   }
 }
+/* ============================================================
+FIX: БУРГЕР-МЕНЮ ДЛЯ МОБИЛЬНЫХ
+============================================================ */
+
+/* Показываем бургер только на мобильных */
+@media (max-width: 768px) {
+  .burger {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+    z-index: 1001 !important;
+  }
+
+  .burger span {
+    display: block !important;
+    width: 26px !important;
+    height: 2.5px !important;
+    background: #EDEDED !important;
+    border-radius: 2px !important;
+    transition: all 0.3s ease !important;
+    transform-origin: center !important;
+  }
+
+  /* Анимация превращения в крестик */
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px) !important;
+  }
+
+  .burger.active span:nth-child(2) {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+  }
+
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px) !important;
+  }
+
+  /* Навигация — скрыта по умолчанию */
+  .nav {
+    display: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(10, 10, 10, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 24px !important;
+    padding: 40px !important;
+    z-index: 1000 !important;
+    transition: opacity 0.4s ease, transform 0.4s ease !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: scale(0.95) !important;
+  }
+
+  /* Открытое меню */
+  .nav.open {
+    display: flex !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transform: scale(1) !important;
+  }
+
+  /* Ссылки в меню */
+  .nav a {
+    font-size: 1.6rem !important;
+    color: #EDEDED !important;
+    font-weight: 500 !important;
+    padding: 8px 0 !important;
+    transition: color 0.3s ease !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .nav a:hover {
+    color: var(--accent, #C9A84C) !important;
+  }
+
+  .nav a::after {
+    display: none !important;
+  }
+
+  /* Скрываем кнопку "Связаться" в хедере на мобильных */
+  .header__right .btn--small {
+    display: none !important;
+  }
+
+  /* Переключатель языка в меню не трогаем */
+  .header__right .lang-switch {
+    z-index: 1001 !important;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .nav a {
+    font-size: 1.3rem !important;
+  }
+
+  .burger span {
+    width: 22px !important;
+    height: 2px !important;
+  }
+}
