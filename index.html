@@ -118,7 +118,7 @@ HERO
 
       <div class="hero__visual" aria-hidden="true">
         <div class="hero__photo-card">
-          <img src="assets/picture.JPG" alt="Фото Владимира Барбашина">
+          <img src="assets/picture.JPG" alt="Фото">
         </div>
       </div>
     </div>
@@ -163,7 +163,7 @@ CASES
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
-DIGITAL FOOTPRINT — ПАУТИНА
+DIGITAL FOOTPRINT — ГЕОМЕТРИЧЕСКАЯ СЕТКА
 ════════════════════════════════════════════════════════════ -->
 <section class="section section--dark" id="metrics">
   <div class="section-bg" style="background-image: url('assets/metrics-placeholder.svg'); opacity:0.04;"></div>
@@ -172,38 +172,43 @@ DIGITAL FOOTPRINT — ПАУТИНА
     <p class="section-sub" id="metricsSub">Реальные результаты, измеряемые в цифрах</p>
 
     <div class="metrics-cloud" id="metricsCloud">
-      <!-- SVG-паутина -->
+      <!-- SVG-геометрическая сетка -->
       <svg class="metrics-cloud__svg" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid meet">
-        <!-- ОРБИТЫ -->
-        <circle class="cloud-orbit" cx="450" cy="250" r="70" />
-        <circle class="cloud-orbit" cx="450" cy="250" r="130" />
-        <circle class="cloud-orbit" cx="450" cy="250" r="190" />
-        <circle class="cloud-orbit" cx="450" cy="250" r="240" />
+        <!-- ГЕКСАГОНАЛЬНАЯ СЕТКА (соты) -->
+        <defs>
+          <pattern id="hexGrid" width="60" height="104" patternUnits="userSpaceOnUse" patternTransform="scale(0.8)">
+            <path d="M30 0 L60 17.3 L60 52 L30 69.3 L0 52 L0 17.3 Z" 
+                  fill="none" stroke="var(--accent, #C9A84C)" stroke-width="0.4" opacity="0.08"/>
+            <path d="M30 52 L60 69.3 L60 104 L30 121.3 L0 104 L0 69.3 Z" 
+                  fill="none" stroke="var(--accent, #C9A84C)" stroke-width="0.4" opacity="0.08"/>
+          </pattern>
+        </defs>
+        
+        <!-- ЗАЛИВКА СЕТКОЙ -->
+        <rect width="900" height="500" fill="url(#hexGrid)" />
 
-        <!-- ДИАГОНАЛЬНЫЕ ЛИНИИ (паутина) -->
-        <line class="cloud-diagonal" x1="450" y1="250" x2="120" y2="80" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="280" y2="60" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="450" y2="90" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="620" y2="60" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="760" y2="180" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="180" y2="200" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="300" y2="380" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="120" y2="400" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="450" y2="420" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="720" y2="320" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="760" y2="400" />
-        <line class="cloud-diagonal" x1="450" y1="250" x2="560" y2="290" />
+        <!-- ОРБИТЫ (лёгкие, как намёк) -->
+        <circle class="cloud-orbit" cx="450" cy="250" r="90" />
+        <circle class="cloud-orbit" cx="450" cy="250" r="160" />
+        <circle class="cloud-orbit" cx="450" cy="250" r="230" />
 
-        <!-- ДОПОЛНИТЕЛЬНЫЕ ПЕРЕКРЁСТНЫЕ ЛИНИИ -->
-        <line class="cloud-diagonal" x1="120" y1="80" x2="760" y2="400" />
-        <line class="cloud-diagonal" x1="280" y1="60" x2="720" y2="320" />
-        <line class="cloud-diagonal" x1="450" y1="90" x2="450" y2="420" />
-        <line class="cloud-diagonal" x1="620" y1="60" x2="300" y2="380" />
-        <line class="cloud-diagonal" x1="760" y1="180" x2="120" y2="400" />
-        <line class="cloud-diagonal" x1="180" y1="200" x2="760" y2="400" />
-        <line class="cloud-diagonal" x1="300" y1="380" x2="760" y2="180" />
-        <line class="cloud-diagonal" x1="120" y1="400" x2="620" y2="60" />
-        <line class="cloud-diagonal" x1="720" y1="320" x2="280" y2="60" />
+        <!-- ДИАГОНАЛЬНЫЕ ЛИНИИ (переплетение) -->
+        <g class="cloud-diagonals">
+          <line x1="0" y1="0" x2="900" y2="500" />
+          <line x1="0" y1="100" x2="900" y2="400" />
+          <line x1="0" y1="200" x2="900" y2="300" />
+          <line x1="0" y1="300" x2="900" y2="200" />
+          <line x1="0" y1="400" x2="900" y2="100" />
+          <line x1="0" y1="500" x2="900" y2="0" />
+          <line x1="100" y1="0" x2="800" y2="500" />
+          <line x1="200" y1="0" x2="700" y2="500" />
+          <line x1="300" y1="0" x2="600" y2="500" />
+          <line x1="400" y1="0" x2="500" y2="500" />
+          <line x1="500" y1="0" x2="400" y2="500" />
+          <line x1="600" y1="0" x2="300" y2="500" />
+          <line x1="700" y1="0" x2="200" y2="500" />
+          <line x1="800" y1="0" x2="100" y2="500" />
+        </g>
 
         <!-- ЦЕНТР -->
         <circle class="cloud-center" cx="450" cy="250" />
