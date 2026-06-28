@@ -38,6 +38,12 @@
         background-attachment: scroll;
       }
     }
+
+    /* Анимация пульсации для света */
+    @keyframes ambientPulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1.0; transform: scale(1.08); }
+    }
   </style>
 </head>
 <body>
@@ -188,16 +194,19 @@ CASES
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
-DIGITAL FOOTPRINT — С ВИДЕОФОНОМ
+DIGITAL FOOTPRINT — С АНИМИРОВАННЫМ ФОНОМ (particles + parallax)
 ════════════════════════════════════════════════════════════ -->
-<section class="section section--dark section--video" id="metrics">
-  <video class="section-bg-video" autoplay muted loop playsinline preload="none">
-    <source src="assets/metrics-bg.webm" type="video/webm">
-  </video>
-  <div class="section-bg-overlay"></div>
-  <div class="section-bg" style="background-image: url('assets/metrics-placeholder.svg'); opacity:0.04;"></div>
+<section class="section section--dark section--video" id="metrics" style="position:relative;overflow:hidden;background:#0A0A0A;min-height:600px;">
   
-  <div class="container">
+  <!-- АНИМИРОВАННЫЙ ФОН -->
+  <div id="metrics-animated-bg" style="position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;">
+    <canvas id="metrics-canvas" style="position:absolute;inset:0;width:100%;height:100%;display:block;"></canvas>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%, transparent 40%, rgba(10,10,10,0.85) 100%);pointer-events:none;z-index:1;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 52% 48%, rgba(212,175,55,0.04) 0%, transparent 70%);pointer-events:none;z-index:1;animation:ambientPulse 10s ease-in-out infinite;"></div>
+  </div>
+
+  <!-- КОНТЕНТ ПОВЕРХ -->
+  <div class="container" style="position:relative;z-index:2;">
     <h2 class="section-title" id="metricsTitle">Цифровой <span class="highlight">след</span></h2>
     <p class="section-sub" id="metricsSub">Реальные результаты, измеряемые в цифрах</p>
 
@@ -392,7 +401,7 @@ BRANDS SLIDER
   <div class="container">
     <div class="brands-slider__header">
       <span class="brands-slider__label" id="brandsLabel">Бренды</span>
-      <span class="brands-slider__sub" id="brandsSub">с которыми я работал</span>
+      <span class="brands-slider__sub" id="brandsSub">С которыми я работал</span>
     </div>
     <div class="brands-slider__track-wrapper">
       <div class="brands-slider__track" id="brandsTrack">
@@ -437,6 +446,106 @@ PARTICLES
 <div class="particle"></div>
 <div class="particle"></div>
 <div class="particle"></div>
+
+<!-- ═══ СКРИПТ ДЛЯ CANVAS-АНИМАЦИИ ═══ -->
+<script>
+  (function initParticlesCanvas() {
+    const container = document.getElementById('metrics-animated-bg');
+    if (!container) return;
+    
+    const canvas = document.getElementById('metrics-canvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+    let animationId = null;
+    
+    function resizeCanvas() {
+      const rect = container.getBoundingClientRect();
+      W = canvas.width = rect.width;
+      H = canvas.height = rect.height;
+    }
+    
+    function initParticles() {
+      particles = [];
+      const count = Math.floor((W * H) / 6000);
+      for (let i = 0; i < Math.min(count, 150); i++) {
+        particles.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: Math.random() * 1.6 + 0.3,
+          a: Math.random() * 0.6 + 0.2,
+          speed: Math.random() * 0.15 + 0.03,
+          drift: (Math.random() - 0.5) * 0.1,
+          pulse: Math.random() * Math.PI * 2,
+          gold: Math.random() > 0.4
+        });
+      }
+    }
+    
+    let t = 0;
+    function drawParticles() {
+      ctx.clearRect(0, 0, W, H);
+      t += 0.012;
+      
+      particles.forEach(p => {
+        p.y -= p.speed;
+        p.x += p.drift;
+        p.pulse += 0.018;
+        
+        if (p.y < -4) { p.y = H + 4; p.x = Math.random() * W; }
+        if (p.x < -4) p.x = W + 4;
+        if (p.x > W + 4) p.x = -4;
+        
+        const alpha = p.a * (0.5 + 0.5 * Math.sin(p.pulse));
+        if (p.gold) {
+          ctx.fillStyle = `rgba(212,175,55,${alpha})`;
+        } else {
+          ctx.fillStyle = `rgba(200,210,235,${alpha * 0.5})`;
+        }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      
+      animationId = requestAnimationFrame(drawParticles);
+    }
+    
+    function startAnimation() {
+      resizeCanvas();
+      initParticles();
+      if (animationId) cancelAnimationFrame(animationId);
+      drawParticles();
+    }
+    
+    startAnimation();
+    
+    const resizeObserver = new ResizeObserver(() => {
+      resizeCanvas();
+      initParticles();
+    });
+    resizeObserver.observe(container);
+    
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
+    
+    const intersectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!animationId) drawParticles();
+        } else {
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+    intersectionObserver.observe(container);
+  })();
+</script>
 
 <script src="script.js" defer></script>
 </body>
