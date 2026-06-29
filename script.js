@@ -429,17 +429,170 @@ const casesList = {
 };
 
 // ============================================================
-// 3. ЛОГИКА ПРИЛОЖЕНИЯ
+// 3. ДАННЫЕ: ПОРТФОЛИО
+// ============================================================
+
+const portfolioData = [
+  {
+    id: 'invask',
+    company: 'INVASK',
+    url: 'https://invask.ru',
+    title: { ru: 'Рост оборота с 800 млн до 2+ млрд ₽', en: 'Revenue growth from 800M to 2+ billion RUB' },
+    shortDesc: { 
+      ru: 'Масштабирование бизнеса, внедрение системы продаж и управленческого учёта.',
+      en: 'Business scaling, implementation of sales and management accounting systems.'
+    },
+    fullDesc: {
+      ru: `
+        <p><strong>INVASK</strong> (<a href="https://invask.ru/pages/about" target="_blank" style="color:#D4AF37;">invask.ru</a>) — крупнейший дистрибьютор профессионального музыкального и звукового оборудования в России и СНГ.</p>
+        <p>Эксклюзивный дистрибьютор торговых марок: 18 SOUND, POWERSOFT, INVOLIGHT, SAMICK, GREG BENNETT, GATOR, ON-STAGE, TEMPO, INVOTONE, FBT, BARCELONA, BEAUMONT, DDRUM, DEAN GUITARS, LUNA, MADRIX, SHOW, WAVES, WIKI, REDHILL.</p>
+        <p>Официальный дистрибьютор: PIONEER, SOUNDCRAFT, CROWN, JBL, LEXICON, DBX, BSS, DIGITECH, BEHRINGER, TURBOSOUND, D'ADDARIO, DEAN MARKLEY, PERRI'S, PROEL, DASLIGHT/SUNLITE.</p>
+        <p>Официальный дилер: YAMAHA, SENNHEISER, ROLAND/BOSS.</p>
+        <p>Клиенты: профессиональные музыканты, инсталляционные и прокатные компании, музыкальные школы, театры, концертные залы, клубы, рестораны, радиостанции.</p>
+        <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://invask.ru/pages/about" target="_blank" style="color:#D4AF37;">invask.ru/pages/about</a></p>
+      `,
+      en: `
+        <p><strong>INVASK</strong> (<a href="https://invask.ru/pages/about" target="_blank" style="color:#D4AF37;">invask.ru</a>) — the largest distributor of professional music and sound equipment in Russia and the CIS.</p>
+        <p>Exclusive distributor for: 18 SOUND, POWERSOFT, INVOLIGHT, SAMICK, GREG BENNETT, GATOR, ON-STAGE, TEMPO, INVOTONE, FBT, BARCELONA, BEAUMONT, DDRUM, DEAN GUITARS, LUNA, MADRIX, SHOW, WAVES, WIKI, REDHILL.</p>
+        <p>Official distributor for: PIONEER, SOUNDCRAFT, CROWN, JBL, LEXICON, DBX, BSS, DIGITECH, BEHRINGER, TURBOSOUND, D'ADDARIO, DEAN MARKLEY, PERRI'S, PROEL, DASLIGHT/SUNLITE.</p>
+        <p>Official dealer for: YAMAHA, SENNHEISER, ROLAND/BOSS.</p>
+        <p>Clients: professional musicians, installation and rental companies, music schools, theaters, concert halls, clubs, restaurants, radio stations.</p>
+        <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://invask.ru/pages/about" target="_blank" style="color:#D4AF37;">invask.ru/pages/about</a></p>
+      `
+    },
+    achievements: {
+      ru: [
+        { number: '2+ млрд ₽', label: 'оборот' },
+        { number: '+12%', label: 'доля рынка' },
+        { number: '300+', label: 'сотрудников' }
+      ],
+      en: [
+        { number: '2+ billion ₽', label: 'revenue' },
+        { number: '+12%', label: 'market share' },
+        { number: '300+', label: 'employees' }
+      ]
+    },
+    tags: {
+      ru: ['Системный подход', 'Управленческий учёт', 'Масштабирование', 'Музыкальное оборудование'],
+      en: ['Systemic approach', 'Management accounting', 'Scaling', 'Music equipment']
+    },
+    images: [
+      'assets/portfolio-invask-1.webp',
+      'assets/portfolio-invask-2.webp'
+    ],
+    thumb: 'assets/portfolio-invask-thumb.webp'
+  },
+  {
+    id: 'at-trade',
+    company: 'A&T Trade',
+    url: 'https://attrade.ru',
+    title: { ru: 'Рост бренда Fender на 20%', en: 'Fender brand growth of 20%' },
+    shortDesc: { 
+      ru: 'Маркетинговая стратегия, работа с дилерами и повышение узнаваемости бренда.',
+      en: 'Marketing strategy, dealer management, and brand awareness growth.'
+    },
+    fullDesc: {
+      ru: `
+        <p><strong>A&T Trade</strong> (<a href="https://attrade.ru/about/" target="_blank" style="color:#D4AF37;">attrade.ru</a>) — крупнейший дистрибьютор оборудования для шоу-бизнеса на постсоветском пространстве.</p>
+        <p>Дистрибьюторский портфель: 52 эксклюзивных бренда и более 100 торговых марок, включая: Martin Audio, Electro-Voice, Focusrite, Shure, Bosch, Pioneer, Yamaha, Chauvet, Ibanez, Korg, JBL, Fender, Gibson, Mackie, Alto.</p>
+        <p>Партнеры: 1150 компаний в России, Белоруссии и Казахстане, формирующих профессиональное ядро (90% игроков на рынке музыкальных инструментов и 80% на рынке профессионального аудио).</p>
+        <p>Развитая система пред- и постпродажных услуг, программы развития бизнеса, совместный маркетинг, pre-sale, защита сделок.</p>
+        <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://attrade.ru/about/" target="_blank" style="color:#D4AF37;">attrade.ru/about/</a></p>
+      `,
+      en: `
+        <p><strong>A&T Trade</strong> (<a href="https://attrade.ru/about/" target="_blank" style="color:#D4AF37;">attrade.ru</a>) — the largest distributor of show business equipment in the post-Soviet space.</p>
+        <p>Distributor portfolio: 52 exclusive brands and over 100 trademarks, including: Martin Audio, Electro-Voice, Focusrite, Shure, Bosch, Pioneer, Yamaha, Chauvet, Ibanez, Korg, JBL, Fender, Gibson, Mackie, Alto.</p>
+        <p>Partners: 1,150 companies in Russia, Belarus, and Kazakhstan, forming the professional core (90% of players in the musical instruments market and 80% in the professional audio market).</p>
+        <p>Developed pre- and post-sales service system, business development programs, co-marketing, pre-sale, and deal protection.</p>
+        <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://attrade.ru/about/" target="_blank" style="color:#D4AF37;">attrade.ru/about/</a></p>
+      `
+    },
+    achievements: {
+      ru: [
+        { number: '+20%', label: 'рост продаж Fender' },
+        { number: '+30%', label: 'дилерская сеть' },
+        { number: '100+', label: 'брендов в портфеле' }
+      ],
+      en: [
+        { number: '+20%', label: 'Fender sales growth' },
+        { number: '+30%', label: 'dealer network' },
+        { number: '100+', label: 'brands in portfolio' }
+      ]
+    },
+    tags: {
+      ru: ['Брендинг', 'Канальный маркетинг', 'Event', 'Музыкальные инструменты'],
+      en: ['Branding', 'Channel marketing', 'Event', 'Musical instruments']
+    },
+    images: [
+      'assets/portfolio-at-trade-1.webp',
+      'assets/portfolio-at-trade-2.webp'
+    ],
+    thumb: 'assets/portfolio-at-trade-thumb.webp'
+  },
+  {
+    id: 'anzhee',
+    company: 'ANZHEE',
+    url: 'https://anzhee.ru',
+    title: { ru: 'Рост лидов на 30%+', en: 'Lead growth of 30%+' },
+    shortDesc: { 
+      ru: 'Цифровой маркетинг, оптимизация воронки и рост конверсии.',
+      en: 'Digital marketing, funnel optimization, and conversion growth.'
+    },
+    fullDesc: {
+      ru: `
+        <p><strong>ANZHEE</strong> (<a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:#D4AF37;">anzhee.ru</a>) — вендор и дистрибьютор профессионального сценического оборудования.</p>
+        <p>Собственные бренды: Anzhee (световое и звуковое оборудование), PROCBET (освещение), EasySound (звук).</p>
+        <p>Дистрибуция брендов: Avolites, Robe, DJPower, DTS, Admark, Showven.</p>
+        <p>Дилерская сеть: более 500 партнёров в РФ, Беларуси, Казахстане и Азербайджане. Ассортимент: свыше 300 моделей собственных брендов и более 500 наименований в дистрибуции.</p>
+        <p>Собственный авторизованный сервисный центр с инженерами для гарантийного и постгарантийного обслуживания.</p>
+        <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:#D4AF37;">anzhee.ru/o-kompanii/</a></p>
+      `,
+      en: `
+        <p><strong>ANZHEE</strong> (<a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:#D4AF37;">anzhee.ru</a>) — vendor and distributor of professional stage equipment.</p>
+        <p>Own brands: Anzhee (lighting and sound equipment), PROCBET (lighting), EasySound (sound).</p>
+        <p>Brand distribution: Avolites, Robe, DJPower, DTS, Admark, Showven.</p>
+        <p>Dealer network: over 500 partners in Russia, Belarus, Kazakhstan, and Azerbaijan. Assortment: over 300 models of own brands and over 500 items in distribution.</p>
+        <p>Own authorized service center with engineers for warranty and post-warranty service.</p>
+        <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:#D4AF37;">anzhee.ru/o-kompanii/</a></p>
+      `
+    },
+    achievements: {
+      ru: [
+        { number: '+30%', label: 'рост лидов' },
+        { number: '-15%', label: 'CAC' },
+        { number: '500+', label: 'партнеров' }
+      ],
+      en: [
+        { number: '+30%', label: 'lead growth' },
+        { number: '-15%', label: 'CAC' },
+        { number: '500+', label: 'partners' }
+      ]
+    },
+    tags: {
+      ru: ['Digital-маркетинг', 'Автоматизация', 'Аналитика', 'Сценическое оборудование'],
+      en: ['Digital marketing', 'Automation', 'Analytics', 'Stage equipment']
+    },
+    images: [
+      'assets/portfolio-anzhee-1.webp',
+      'assets/portfolio-anzhee-2.webp'
+    ],
+    thumb: 'assets/portfolio-anzhee-thumb.webp'
+  }
+];
+
+// ============================================================
+// 4. ЛОГИКА ПРИЛОЖЕНИЯ
 // ============================================================
 
 let currentLang = 'ru';
 let currentPerspective = 'business';
+let currentPortfolioFilter = 'all';
 
 function getLangData() { return data[currentLang]; }
 function getCaseBlocks() { return data[currentLang].caseBlocks[currentPerspective] || data[currentLang].caseBlocks.business; }
 
 // ============================================================
-// 4. РЕНДЕРИНГ
+// 5. РЕНДЕРИНГ
 // ============================================================
 
 function syncAccentStyles() {
@@ -560,19 +713,171 @@ function renderBrands() {
   track.innerHTML = doubled.map(brand => `<span class="brand-slide">${brand}</span>`).join('');
 }
 
-function renderPortfolio() {
+// ============================================================
+// 6. РЕНДЕРИНГ ПОРТФОЛИО
+// ============================================================
+
+function renderPortfolio(filter) {
   const d = getLangData();
+  const grid = document.getElementById('portfolioGrid');
+  if (!grid) return;
+  
+  // Обновляем заголовки
   const titleEl = document.getElementById('portfolioTitle');
   const subEl = document.getElementById('portfolioSub');
-  
   if (titleEl) titleEl.innerHTML = d.portfolioTitle || 'Портфолио <span class="highlight">проектов</span>';
   if (subEl) subEl.innerHTML = d.portfolioSub || '<p>Реальные проекты, в которых я участвовал как руководитель и стратег. Каждый кейс — это система, которую мы выстроили и развили.</p>';
   
-  // Обновляем язык в портфолио через глобальную функцию
-  if (typeof window.updatePortfolioLanguage === 'function') {
-    window.updatePortfolioLanguage();
+  const currentFilter = filter || currentPortfolioFilter || 'all';
+  const filtered = currentFilter === 'all' 
+    ? portfolioData 
+    : portfolioData.filter(p => p.id === currentFilter);
+  
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:3rem;color:rgba(255,255,255,0.4);">
+      ${currentLang === 'ru' ? 'Нет проектов в этой категории' : 'No projects in this category'}
+    </div>`;
+    return;
   }
+  
+  grid.innerHTML = filtered.map((p, index) => {
+    const title = p.title[currentLang] || p.title.ru;
+    const shortDesc = p.shortDesc[currentLang] || p.shortDesc.ru;
+    const tags = p.tags[currentLang] || p.tags.ru;
+    const achievements = p.achievements[currentLang] || p.achievements.ru;
+    
+    return `
+      <div class="portfolio-card" data-project="${p.id}" style="animation-delay:${index * 0.1}s">
+        <div class="portfolio-card__thumb">
+          <img src="${p.thumb}" alt="${title}" loading="lazy" 
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder" style="display:none;">📷 ${p.company}</div>
+        </div>
+        <div class="portfolio-card__body">
+          <div class="portfolio-card__tag">${p.company}</div>
+          <div class="portfolio-card__title">${title}</div>
+          <div class="portfolio-card__desc">${shortDesc}</div>
+          <div class="portfolio-card__meta">
+            <span>📈 ${achievements[0]?.number || ''}</span>
+            <span>🏷️ ${tags[0] || ''}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Добавляем обработчики кликов
+  document.querySelectorAll('.portfolio-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const projectId = card.dataset.project;
+      const project = portfolioData.find(p => p.id === projectId);
+      if (project) openPortfolioModal(project);
+    });
+  });
 }
+
+// ============================================================
+// 7. МОДАЛЬНОЕ ОКНО ПОРТФОЛИО
+// ============================================================
+
+function openPortfolioModal(project) {
+  const existing = document.getElementById('portfolioModal');
+  if (existing) existing.remove();
+
+  const title = project.title[currentLang] || project.title.ru;
+  const fullDesc = project.fullDesc[currentLang] || project.fullDesc.ru;
+  const achievements = project.achievements[currentLang] || project.achievements.ru;
+  const tags = project.tags[currentLang] || project.tags.ru;
+
+  const modalHtml = `
+    <div class="portfolio-modal open" id="portfolioModal">
+      <div class="portfolio-modal__inner">
+        <button class="portfolio-modal__close" id="modalClose">✕</button>
+        <div class="portfolio-modal__title">${title}</div>
+        <div class="portfolio-modal__sub">${project.company}</div>
+        <div class="portfolio-modal__body">
+          ${fullDesc}
+          <div class="portfolio-modal__achievements">
+            ${achievements.map(a => `
+              <div class="portfolio-modal__achievement">
+                <span class="number">${a.number}</span>
+                <span class="label">${a.label}</span>
+              </div>
+            `).join('')}
+          </div>
+          <div class="portfolio-modal__images">
+            ${project.images.map(img => `
+              <img src="${img}" alt="${project.company}" loading="lazy" 
+                   onerror="this.style.display='none'">
+            `).join('')}
+          </div>
+          <p><strong>${currentLang === 'ru' ? 'Теги:' : 'Tags:'}</strong> ${tags.join(' · ')}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
+  
+  const modalEl = document.getElementById('portfolioModal');
+  const closeBtn = document.getElementById('modalClose');
+
+  function closeModal() {
+    if (modalEl) modalEl.remove();
+  }
+
+  closeBtn?.addEventListener('click', closeModal);
+  modalEl?.addEventListener('click', (e) => {
+    if (e.target === modalEl) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+}
+
+// ============================================================
+// 8. ИНИЦИАЛИЗАЦИЯ ФИЛЬТРОВ ПОРТФОЛИО
+// ============================================================
+
+function initPortfolioFilters() {
+  const filters = document.querySelectorAll('.portfolio-filter-btn');
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentPortfolioFilter = btn.dataset.filter;
+      renderPortfolio(currentPortfolioFilter);
+    });
+  });
+}
+
+// ============================================================
+// 9. СВЯЗЬ С КЕЙСАМИ (переход в портфолио)
+// ============================================================
+
+function initCaseLinks() {
+  document.addEventListener('click', (e) => {
+    const caseLink = e.target.closest('[data-case-link]');
+    if (caseLink) {
+      const projectId = caseLink.dataset.caseLink;
+      const project = portfolioData.find(p => p.id === projectId);
+      if (project) {
+        e.preventDefault();
+        openPortfolioModal(project);
+        document.querySelectorAll('.portfolio-filter-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.filter === projectId);
+        });
+        currentPortfolioFilter = projectId;
+        renderPortfolio(currentPortfolioFilter);
+        document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+}
+
+// ============================================================
+// 10. РЕНДЕРИНГ КЕЙСОВ
+// ============================================================
 
 function renderCases(preserveScroll = false) {
   const d = getLangData();
@@ -645,6 +950,10 @@ function renderCases(preserveScroll = false) {
   }, 180);
 }
 
+// ============================================================
+// 11. ПОЛНЫЙ РЕНДЕРИНГ
+// ============================================================
+
 function renderAll() {
   renderHero();
   renderNav();
@@ -654,13 +963,13 @@ function renderAll() {
   renderFuture();
   renderContact();
   renderBrands();
-  renderPortfolio();
+  renderPortfolio(currentPortfolioFilter);
   renderCases();
   syncAccentStyles();
 }
 
 // ============================================================
-// 5. ПЕРЕКЛЮЧЕНИЕ
+// 12. ПЕРЕКЛЮЧЕНИЕ
 // ============================================================
 
 function switchPerspective(perspective) {
@@ -739,11 +1048,6 @@ function switchLang(lang) {
 
   renderAll();
   
-  // Обновляем портфолио через глобальную функцию
-  if (typeof window.updatePortfolioLanguage === 'function') {
-    window.updatePortfolioLanguage();
-  }
-  
   try { localStorage.setItem('executive_lang', lang); } catch (e) {}
 }
 
@@ -782,7 +1086,7 @@ function loadSaved() {
 }
 
 // ============================================================
-// 6. АНИМАЦИЯ ДЛЯ ГЕОМЕТРИЧЕСКОЙ СЕТКИ
+// 13. АНИМАЦИЯ ДЛЯ ГЕОМЕТРИЧЕСКОЙ СЕТКИ
 // ============================================================
 
 function initMetricsCloud() {
@@ -826,7 +1130,7 @@ function initMetricsCloud() {
 }
 
 // ============================================================
-// 7. ИНИЦИАЛИЗАЦИЯ
+// 14. ИНИЦИАЛИЗАЦИЯ
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -911,13 +1215,18 @@ document.addEventListener('DOMContentLoaded', function() {
       observer.observe(el);
     });
 
+  // Инициализация портфолио
+  initPortfolioFilters();
+  initCaseLinks();
+  renderPortfolio('all');
+
   initMetricsCloud();
 
-  console.log('✅ Executive Casebook v20 — полная версия');
+  console.log('✅ Executive Casebook v21 — полная версия с портфолио');
 });
 
 // ============================================================
-// 8. ФОРСИРОВАННАЯ ЗАГРУЗКА СЛАЙДЕРА
+// 15. ФОРСИРОВАННАЯ ЗАГРУЗКА СЛАЙДЕРА
 // ============================================================
 (function forceBrands() {
   function renderBrandsForce() {
