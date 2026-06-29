@@ -499,8 +499,8 @@ const portfolioData = [
       ]
     },
     tags: {
-      ru: ['Системный подход', 'Управленческий учёт', 'Масштабирование', 'Музыкальное оборудование'],
-      en: ['Systemic approach', 'Management accounting', 'Scaling', 'Music equipment']
+      ru: ['Системный подход', 'Управленческий учёт', 'Масштабирование', 'Цифровое развите'],
+      en: ['Systemic approach', 'Management accounting', 'Scaling', 'Digitalization and growth']
     },
     images: [
       'assets/portfolio-invask-1.webp',
@@ -568,8 +568,8 @@ const portfolioData = [
       ]
     },
     tags: {
-      ru: ['Брендинг', 'Канальный маркетинг', 'Event', 'Музыкальные инструменты'],
-      en: ['Branding', 'Channel marketing', 'Event', 'Musical instruments']
+      ru: ['Брендинг', 'Омниканальный маркетинг', 'Event', 'Работа с артистами'],
+      en: ['Branding', 'Omni-channel marketing', 'Event', 'Artist relations']
     },
     images: [
       'assets/portfolio-at-trade-1.webp',
@@ -643,8 +643,8 @@ const portfolioData = [
       ]
     },
     tags: {
-      ru: ['Digital-маркетинг', 'Автоматизация', 'Аналитика', 'Сценическое оборудование'],
-      en: ['Digital marketing', 'Automation', 'Analytics', 'Stage equipment']
+      ru: ['Маркетинг', 'Лидогенерация', 'Аналитика', 'Ai интеграции'],
+      en: ['Marketing', 'Lead generation', 'Analytics', 'Ai integration']
     },
     images: [
       'assets/portfolio-anzhee-1.webp',
