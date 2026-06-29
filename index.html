@@ -328,15 +328,15 @@
       letter-spacing: 0.02em;
     }
     .portfolio-filter-btn:hover {
-      background: rgba(212,175,55,0.08);
-      border-color: rgba(212,175,55,0.3);
+      background: rgba(255,255,255,0.08);
+      border-color: var(--accent, #C9A84C);
       color: #fff;
     }
     .portfolio-filter-btn.active {
-      background: rgba(212,175,55,0.15);
-      border-color: #D4AF37;
-      color: #D4AF37;
-      box-shadow: 0 0 30px rgba(212,175,55,0.06);
+      background: rgba(255,255,255,0.1);
+      border-color: var(--accent, #C9A84C);
+      color: var(--accent, #C9A84C);
+      box-shadow: 0 0 30px var(--accent-glow, rgba(201,168,76,0.06));
     }
 
     .portfolio-grid {
@@ -356,7 +356,7 @@
     }
     .portfolio-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(212,175,55,0.2);
+      border-color: var(--accent, rgba(201,168,76,0.2));
       box-shadow: 0 20px 60px rgba(0,0,0,0.4);
     }
     .portfolio-card__thumb {
@@ -380,7 +380,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(212,175,55,0.04), rgba(212,175,55,0.01));
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
       color: rgba(255,255,255,0.15);
       font-size: 0.85rem;
       letter-spacing: 0.05em;
@@ -393,12 +393,12 @@
       font-size: 0.6rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: #D4AF37;
-      background: rgba(212,175,55,0.08);
+      color: var(--accent, #D4AF37);
+      background: rgba(255,255,255,0.05);
       padding: 0.2rem 0.9rem;
       border-radius: 20px;
       margin-bottom: 0.7rem;
-      border: 1px solid rgba(212,175,55,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
     }
     .portfolio-card__title {
       font-size: 1.25rem;
@@ -452,7 +452,7 @@
       max-height: 90vh;
       overflow-y: auto;
       background: rgba(20,30,50,0.8);
-      border: 1px solid rgba(212,175,55,0.1);
+      border: 1px solid var(--accent-border, rgba(201,168,76,0.1));
       border-radius: 24px;
       padding: 2.5rem 3rem;
       position: relative;
@@ -496,7 +496,7 @@
       margin-bottom: 1rem;
     }
     .portfolio-modal__body strong {
-      color: #D4AF37;
+      color: var(--accent, #D4AF37);
       font-weight: 500;
     }
     .portfolio-modal__images {
@@ -519,9 +519,9 @@
       gap: 1rem;
       margin: 1.5rem 0;
       padding: 1.5rem;
-      background: rgba(212,175,55,0.04);
+      background: rgba(255,255,255,0.03);
       border-radius: 16px;
-      border: 1px solid rgba(212,175,55,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
     }
     .portfolio-modal__achievement {
       text-align: center;
@@ -529,7 +529,7 @@
     .portfolio-modal__achievement .number {
       font-size: 1.6rem;
       font-weight: 600;
-      color: #D4AF37;
+      color: var(--accent, #D4AF37);
       display: block;
     }
     .portfolio-modal__achievement .label {
