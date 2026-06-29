@@ -117,7 +117,7 @@ const data = {
     heroTag: '14+ years of practice · B2B · B2C · Business Development',
     heroTitle: 'Business is a <span class="highlight">system</span>,<br>not a collection of tools.',
     heroText: [
-      '<p class="hero__text-lead">«Growth slows not because of a lack of ideas.</p><p class="hero__text-lead" style="margin-top: -0.5rem;">But because marketing, sales, and strategy operate in isolation.»</p>',
+      '<p class="hero__text-lead">«Growth slows not because of a lack of ideas.</br> But because marketing, sales, and strategy operate in isolation.»</p>',
       'Sustainable development requires a unified model where every decision reinforces the others.',
       'Marketing is not about tools. It\'s about understanding people and their needs.'
     ],
