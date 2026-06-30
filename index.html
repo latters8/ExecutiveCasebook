@@ -52,9 +52,13 @@
   <!-- Основной CSS -->
   <link rel="preload" href="styles.css" as="style">
 
-  <!-- ===== СТОРОННИЕ СЕРВИСЫ (preconnect после критических ресурсов) ===== -->
-  <link rel="preconnect" href="https://mc.yandex.ru">
-  <link rel="preconnect" href="https://mc.yandex.com">
+<!-- ===== СТОРОННИЕ СЕРВИСЫ (preconnect после критических ресурсов) ===== -->
+<link rel="preconnect" href="https://mc.yandex.ru">
+<link rel="preconnect" href="https://mc.yandex.com">
+
+<!-- ===== DNS-PREFETCH ДЛЯ СТОРОННИХ СЕРВИСОВ (fallback для старых браузеров) ===== -->
+<link rel="dns-prefetch" href="https://mc.yandex.ru">
+<link rel="dns-prefetch" href="https://mc.yandex.com">
 
   <!-- ===== YANDEX METRIKA ===== -->
   <script type="text/javascript">
