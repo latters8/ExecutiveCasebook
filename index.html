@@ -31,7 +31,7 @@
   <meta name="twitter:description" content="Бизнес, маркетинг, стратегия. 14+ лет практики." />
   <meta name="twitter:image" content="https://latters8.github.io/ExecutiveCasebook/assets/og-image.jpg" />
 
-  <!-- ===== STYLES ===== -->
+  <!-- ===== CRITICAL RESOURCES (загружаются в первую очередь) ===== -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- ===== PRELOAD КРИТИЧЕСКИХ РЕСУРСОВ ===== -->
@@ -51,6 +51,24 @@
 
   <!-- Основной CSS -->
   <link rel="preload" href="styles.css" as="style">
+
+  <!-- ===== СТОРОННИЕ СЕРВИСЫ (preconnect после критических ресурсов) ===== -->
+  <link rel="preconnect" href="https://mc.yandex.ru">
+  <link rel="preconnect" href="https://mc.yandex.com">
+
+  <!-- ===== YANDEX METRIKA ===== -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110237689', 'ym');
+
+    ym(110237689, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110237689" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 
   <style>
     body {
@@ -74,7 +92,6 @@
         background-attachment: scroll;
       }
     }
-
 
     /* ══════════════════════════════════════
        PRELOADER — РУСИФИЦИРОВАННАЯ ВЕРСИЯ
@@ -629,6 +646,7 @@ SCHEMA.ORG — СТРУКТУРИРОВАННЫЕ ДАННЫЕ ДЛЯ ПОИСК
 </head>
 <body>
 
+
 <!-- ════════════════════════════════════════════════════════════
 PRELOADER / INTRO SCREEN — РУСИФИЦИРОВАННЫЙ
 ════════════════════════════════════════════════════════════ -->
@@ -829,7 +847,7 @@ HERO
 
       <div class="hero__visual" aria-hidden="true">
         <div class="hero__photo-card">
-          <img src="assets/picture.webp" alt="Владимир Барбашин" loading="lazy" decoding="async" width="420" height="620">
+          <img src="assets/picture.webp" alt="Владимир Барбашин" loading="lazy" decoding="async" width="420" height="620" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -1378,7 +1396,7 @@ PARTICLES
   })();
 </script>
 
-<!-- ═══ СКРИПТ ДЛЯ ПОРТФОЛИО ═══ -->
+<!-- ═══ PRELOADER SCRIPT ═══ -->
 <script>
   (function initPortfolio() {
     // Определяем текущий язык
@@ -1397,38 +1415,64 @@ PARTICLES
         },
         fullDesc: {
           ru: `
-            <p><strong>INVASK</strong> (<a href="https://invask.ru/pages/about" target="_blank" style="color:#D4AF37;">invask.ru</a>) — крупнейший дистрибьютор профессионального музыкального и звукового оборудования в России и СНГ.</p>
+            <p><strong>INVASK</strong> (<a href="https://invask.ru/pages/about" target="_blank" style="color:var(--accent, #D4AF37);">invask.ru</a>) — крупнейший дистрибьютор профессионального музыкального и звукового оборудования в России и СНГ.</p>
             <p>Эксклюзивный дистрибьютор торговых марок: 18 SOUND, POWERSOFT, INVOLIGHT, SAMICK, GREG BENNETT, GATOR, ON-STAGE, TEMPO, INVOTONE, FBT, BARCELONA, BEAUMONT, DDRUM, DEAN GUITARS, LUNA, MADRIX, SHOW, WAVES, WIKI, REDHILL.</p>
-            <p>Официальный дистрибьютор: PIONEER, SOUNDCRAFT, CROWN, JBL, LEXICON, DBX, BSS, DIGITECH, BEHRINGER, TURBOSOUND, D’ADDARIO, DEAN MARKLEY, PERRI’S, PROEL, DASLIGHT/SUNLITE.</p>
+            <p>Официальный дистрибьютор: PIONEER, SOUNDCRAFT, CROWN, JBL, LEXICON, DBX, BSS, DIGITECH, BEHRINGER, TURBOSOUND, D'ADDARIO, DEAN MARKLEY, PERRI'S, PROEL, DASLIGHT/SUNLITE.</p>
             <p>Официальный дилер: YAMAHA, SENNHEISER, ROLAND/BOSS.</p>
             <p>Клиенты: профессиональные музыканты, инсталляционные и прокатные компании, музыкальные школы, театры, концертные залы, клубы, рестораны, радиостанции.</p>
-            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://invask.ru/pages/about" target="_blank" style="color:#D4AF37;">invask.ru/pages/about</a></p>
+            
+            <h4 style="margin-top:1.5rem;color:#F3F4F6;font-size:1.1rem;font-weight:500;">Роль и результаты</h4>
+            <p>Руководство маркетинговым направлением и цифровой трансформацией компании. Разработана и реализована стратегия развития интернет-магазина, дилерского кабинета, CRM и интеграционных сервисов. Организована миграция корпоративной платформы на новую архитектуру с сохранением всех ключевых бизнес-процессов. Создана одна из самых функциональных цифровых экосистем для дилеров в отрасли, обеспечивающая полную автоматизацию заказов, резервирования, электронного документооборота и API-интеграций. Обеспечен рост посещаемости цифровых ресурсов более чем на 30%. Внедрены инструменты автоматизации резервов, контроля дебиторской задолженности и обработки заказов, что позволило значительно повысить эффективность работы всех подразделений. Компания увеличила оборот с 800 млн до 2+ млрд рублей за период работы.</p>
+            
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin:1rem 0;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">2+ млрд ₽</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">оборот компании</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">+30%</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">рост трафика</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">100+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">брендов в портфеле</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">1 300+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">дилеров</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">15 000+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">SKU в ассортименте</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">800 млн → 2+ млрд</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">рост оборота за период</span></div>
+            </div>
+            
+            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://invask.ru/pages/about" target="_blank" style="color:var(--accent, #D4AF37);">invask.ru/pages/about</a></p>
           `,
           en: `
-            <p><strong>INVASK</strong> (<a href="https://invask.ru/pages/about" target="_blank" style="color:#D4AF37;">invask.ru</a>) — the largest distributor of professional music and sound equipment in Russia and the CIS.</p>
+            <p><strong>INVASK</strong> (<a href="https://invask.ru/pages/about" target="_blank" style="color:var(--accent, #D4AF37);">invask.ru</a>) — the largest distributor of professional music and sound equipment in Russia and the CIS.</p>
             <p>Exclusive distributor for: 18 SOUND, POWERSOFT, INVOLIGHT, SAMICK, GREG BENNETT, GATOR, ON-STAGE, TEMPO, INVOTONE, FBT, BARCELONA, BEAUMONT, DDRUM, DEAN GUITARS, LUNA, MADRIX, SHOW, WAVES, WIKI, REDHILL.</p>
             <p>Official distributor for: PIONEER, SOUNDCRAFT, CROWN, JBL, LEXICON, DBX, BSS, DIGITECH, BEHRINGER, TURBOSOUND, D'ADDARIO, DEAN MARKLEY, PERRI'S, PROEL, DASLIGHT/SUNLITE.</p>
             <p>Official dealer for: YAMAHA, SENNHEISER, ROLAND/BOSS.</p>
             <p>Clients: professional musicians, installation and rental companies, music schools, theaters, concert halls, clubs, restaurants, radio stations.</p>
-            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://invask.ru/pages/about" target="_blank" style="color:#D4AF37;">invask.ru/pages/about</a></p>
+            
+            <h4 style="margin-top:1.5rem;color:#F3F4F6;font-size:1.1rem;font-weight:500;">Role and Results</h4>
+            <p>Led the marketing function and digital transformation of the company. Developed and implemented a strategy for the online store, dealer portal, CRM, and integration services. Orchestrated the migration of the corporate platform to a new architecture while preserving all critical business processes. Created one of the most functional digital ecosystems for dealers in the industry, fully automating orders, reservations, e-document flow, and API integrations. Increased traffic to digital resources by over 30%. Implemented automation tools for reservations, receivables control, and order processing, significantly boosting the efficiency of all departments. The company grew revenue from 800 million to over 2 billion RUB during the period.</p>
+            
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin:1rem 0;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">2+ billion ₽</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">company revenue</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">+30%</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">traffic growth</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">100+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">brands in portfolio</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">1,300+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">dealers</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">15,000+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">SKU in assortment</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">800M → 2+ billion</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">revenue growth over period</span></div>
+            </div>
+            
+            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://invask.ru/pages/about" target="_blank" style="color:var(--accent, #D4AF37);">invask.ru/pages/about</a></p>
           `
         },
         achievements: {
           ru: [
             { number: '2+ млрд ₽', label: 'оборот' },
             { number: '+12%', label: 'доля рынка' },
-            { number: '300+', label: 'сотрудников' }
+            { number: '90k+', label: 'посетителей' }
           ],
           en: [
             { number: '2+ billion ₽', label: 'revenue' },
             { number: '+12%', label: 'market share' },
-            { number: '300+', label: 'employees' }
+            { number: '90k+', label: 'visitors' }
           ]
         },
         tags: {
-      ru: ['Системный подход', 'Управленческий учёт', 'Масштабирование', 'Цифровое развите'],
-      en: ['Systemic approach', 'Management accounting', 'Scaling', 'Digitalization and growth']
-    },
+          ru: ['Системный подход', 'Управленческий учёт', 'Масштабирование', 'Цифровое развите'],
+          en: ['Systemic approach', 'Management accounting', 'Scaling', 'Digitalization and growth']
+        },
         images: [
           'assets/portfolio-invask-1.webp',
           'assets/portfolio-invask-2.webp'
@@ -1446,36 +1490,58 @@ PARTICLES
         },
         fullDesc: {
           ru: `
-            <p><strong>A&T Trade</strong> (<a href="https://attrade.ru/about/" target="_blank" style="color:#D4AF37;">attrade.ru</a>) — крупнейший дистрибьютор оборудования для шоу-бизнеса на постсоветском пространстве.</p>
+            <p><strong>A&T Trade</strong> (<a href="https://attrade.ru/about/" target="_blank" style="color:var(--accent, #D4AF37);">attrade.ru</a>) — крупнейший дистрибьютор оборудования для шоу-бизнеса на постсоветском пространстве.</p>
             <p>Дистрибьюторский портфель: 52 эксклюзивных бренда и более 100 торговых марок, включая: Martin Audio, Electro-Voice, Focusrite, Shure, Bosch, Pioneer, Yamaha, Chauvet, Ibanez, Korg, JBL, Fender, Gibson, Mackie, Alto.</p>
             <p>Партнеры: 1150 компаний в России, Белоруссии и Казахстане, формирующих профессиональное ядро (90% игроков на рынке музыкальных инструментов и 80% на рынке профессионального аудио).</p>
             <p>Развитая система пред- и постпродажных услуг, программы развития бизнеса, совместный маркетинг, pre-sale, защита сделок.</p>
-            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://attrade.ru/about/" target="_blank" style="color:#D4AF37;">attrade.ru/about/</a></p>
+            
+            <h4 style="margin-top:1.5rem;color:#F3F4F6;font-size:1.1rem;font-weight:500;">Роль и результаты</h4>
+            <p>Управление развитием портфеля брендов Fender Musical Instruments Corporation (Fender, Jackson, Charvel, Gretsch, Squier) на российском рынке. Реализован полный цикл: ассортиментная стратегия, планирование закупок, выполнение маркетинговых программ и взаимодействие с европейским офисом производителя. Обеспечен стабильный годовой рост продаж портфеля брендов в среднем на 20%. Организованы масштабные федеральные брендовые мероприятия, включая Fender Day одновременно в Москве и Санкт-Петербурге. Развито сотрудничество с артистами, лидерами мнений и профессиональным сообществом, что позволило повысить узнаваемость бренда и спрос на продукцию.</p>
+            
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin:1rem 0;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">+20%</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">рост продаж Fender год к году</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">40+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">розничных магазинов сети</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">300+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">сотрудников в группе компаний</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">1 100+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">дилеров и партнеров</span></div>
+            </div>
+            
+            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://attrade.ru/about/" target="_blank" style="color:var(--accent, #D4AF37);">attrade.ru/about/</a></p>
           `,
           en: `
-            <p><strong>A&T Trade</strong> (<a href="https://attrade.ru/about/" target="_blank" style="color:#D4AF37;">attrade.ru</a>) — the largest distributor of show business equipment in the post-Soviet space.</p>
+            <p><strong>A&T Trade</strong> (<a href="https://attrade.ru/about/" target="_blank" style="color:var(--accent, #D4AF37);">attrade.ru</a>) — the largest distributor of show business equipment in the post-Soviet space.</p>
             <p>Distributor portfolio: 52 exclusive brands and over 100 trademarks, including: Martin Audio, Electro-Voice, Focusrite, Shure, Bosch, Pioneer, Yamaha, Chauvet, Ibanez, Korg, JBL, Fender, Gibson, Mackie, Alto.</p>
             <p>Partners: 1,150 companies in Russia, Belarus, and Kazakhstan, forming the professional core (90% of players in the musical instruments market and 80% in the professional audio market).</p>
             <p>Developed pre- and post-sales service system, business development programs, co-marketing, pre-sale, and deal protection.</p>
-            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://attrade.ru/about/" target="_blank" style="color:#D4AF37;">attrade.ru/about/</a></p>
+            
+            <h4 style="margin-top:1.5rem;color:#F3F4F6;font-size:1.1rem;font-weight:500;">Role and Results</h4>
+            <p>Managed the Fender Musical Instruments Corporation portfolio (Fender, Jackson, Charvel, Gretsch, Squier) in the Russian market. Delivered full-cycle execution: assortment strategy, procurement planning, marketing program implementation, and liaison with the manufacturer's European office. Achieved consistent year-over-year sales growth for the brand portfolio, averaging 20%. Organized large-scale federal brand events, including Fender Day in Moscow and Saint Petersburg. Developed relationships with artists, opinion leaders, and the professional community, which enhanced brand awareness and drove product demand.</p>
+            
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin:1rem 0;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">+20%</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">year-over-year Fender sales growth</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">40+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">retail stores in the network</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">300+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">employees in the group</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">1,500+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">dealers and partners</span></div>
+            </div>
+            
+            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://attrade.ru/about/" target="_blank" style="color:var(--accent, #D4AF37);">attrade.ru/about/</a></p>
           `
         },
         achievements: {
           ru: [
             { number: '+20%', label: 'рост продаж Fender' },
             { number: '+30%', label: 'дилерская сеть' },
-            { number: '100+', label: 'брендов в портфеле' }
+            { number: '+50%', label: 'маркетинговые активности' }
           ],
           en: [
             { number: '+20%', label: 'Fender sales growth' },
             { number: '+30%', label: 'dealer network' },
-            { number: '100+', label: 'brands in portfolio' }
+            { number: '+50%', label: 'marketing activities' }
           ]
         },
-    tags: {
-      ru: ['Брендинг', 'Омниканальный маркетинг', 'Event', 'Работа с артистами'],
-      en: ['Branding', 'Omni-channel marketing', 'Event', 'Artist relations']
-    },
+        tags: {
+          ru: ['Брендинг', 'Омниканальный маркетинг', 'Event', 'Работа с артистами'],
+          en: ['Branding', 'Omni-channel marketing', 'Event', 'Artist relations']
+        },
         images: [
           'assets/portfolio-at-trade-1.webp',
           'assets/portfolio-at-trade-2.webp'
@@ -1493,38 +1559,64 @@ PARTICLES
         },
         fullDesc: {
           ru: `
-            <p><strong>ANZHEE</strong> (<a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:#D4AF37;">anzhee.ru</a>) — вендор и дистрибьютор профессионального сценического оборудования.</p>
+            <p><strong>ANZHEE</strong> (<a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:var(--accent, #D4AF37);">anzhee.ru</a>) — вендор и дистрибьютор профессионального сценического оборудования.</p>
             <p>Собственные бренды: Anzhee (световое и звуковое оборудование), PROCBET (освещение), EasySound (звук).</p>
             <p>Дистрибуция брендов: Avolites, Robe, DJPower, DTS, Admark, Showven.</p>
             <p>Дилерская сеть: более 500 партнёров в РФ, Беларуси, Казахстане и Азербайджане. Ассортимент: свыше 300 моделей собственных брендов и более 500 наименований в дистрибуции.</p>
             <p>Собственный авторизованный сервисный центр с инженерами для гарантийного и постгарантийного обслуживания.</p>
-            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:#D4AF37;">anzhee.ru/o-kompanii/</a></p>
+            
+            <h4 style="margin-top:1.5rem;color:#F3F4F6;font-size:1.1rem;font-weight:500;">Роль и результаты</h4>
+            <p>Руководство маркетинговым направлением и цифровой инфраструктурой компании. Разработана и реализована маркетинговая стратегия, обеспечен рост лидов более чем на 30% и усиление бренда в условиях конкурентного рынка. Увеличена органическая видимость и поисковый трафик, ИКС сайта повышен более чем на 310 пунктов. Внедрена AI-автоматизация маркетинга, контента и внутренних процессов, что позволило сократить операционные затраты и ускорить обработку заявок. Организованы отраслевые мероприятия и дилерские программы с совокупным бюджетом до 6 млн рублей. Запущены новые продуктовые направления совместно с коммерческим отделом и продакт-менеджерами.</p>
+            
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin:1rem 0;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">+30%</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">рост лидов</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">+310</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">пунктов ИКС</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">400+ млн ₽</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">оборот компании</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">6 млн ₽</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">бюджет мероприятий</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">500+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">партнеров в дилерской сети</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">AI</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">автоматизация маркетинга</span></div>
+            </div>
+            
+            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:var(--accent, #D4AF37);">anzhee.ru/o-kompanii/</a></p>
           `,
           en: `
-            <p><strong>ANZHEE</strong> (<a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:#D4AF37;">anzhee.ru</a>) — vendor and distributor of professional stage equipment.</p>
+            <p><strong>ANZHEE</strong> (<a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:var(--accent, #D4AF37);">anzhee.ru</a>) — vendor and distributor of professional stage equipment.</p>
             <p>Own brands: Anzhee (lighting and sound equipment), PROCBET (lighting), EasySound (sound).</p>
             <p>Brand distribution: Avolites, Robe, DJPower, DTS, Admark, Showven.</p>
             <p>Dealer network: over 500 partners in Russia, Belarus, Kazakhstan, and Azerbaijan. Assortment: over 300 models of own brands and over 500 items in distribution.</p>
             <p>Own authorized service center with engineers for warranty and post-warranty service.</p>
-            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:#D4AF37;">anzhee.ru/o-kompanii/</a></p>
+            
+            <h4 style="margin-top:1.5rem;color:#F3F4F6;font-size:1.1rem;font-weight:500;">Role and Results</h4>
+            <p>Led the marketing function and digital infrastructure of the company. Developed and executed a marketing strategy that drove lead growth of over 30% and strengthened the brand in a competitive market. Increased organic visibility and search traffic, boosting site PageRank by over 310 points. Implemented AI-based automation for marketing, content, and internal processes, reducing operational costs and accelerating lead processing. Organized industry events and dealer programs with a cumulative budget of up to 6 million RUB. Launched new product lines in collaboration with the commercial department and product managers.</p>
+            
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin:1rem 0;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">+30%</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">lead growth</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">+310</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">PageRank points</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">400+ million ₽</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">company revenue</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">6 million ₽</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">event budget</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">500+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">dealer network partners</span></div>
+              <div><span style="color:var(--accent,#D4AF37);font-weight:600;">AI</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">marketing automation</span></div>
+            </div>
+            
+            <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://anzhee.ru/o-kompanii/" target="_blank" style="color:var(--accent, #D4AF37);">anzhee.ru/o-kompanii/</a></p>
           `
         },
         achievements: {
           ru: [
             { number: '+30%', label: 'рост лидов' },
             { number: '-15%', label: 'CAC' },
-            { number: '500+', label: 'партнеров' }
+            { number: '+310', label: 'пунктов ИКС' }
           ],
           en: [
             { number: '+30%', label: 'lead growth' },
             { number: '-15%', label: 'CAC' },
-            { number: '500+', label: 'partners' }
+            { number: '+310', label: 'PageRank' }
           ]
         },
-    tags: {
-      ru: ['Маркетинг', 'Лидогенерация', 'Аналитика', 'Ai интеграции'],
-      en: ['Marketing', 'Lead generation', 'Analytics', 'Ai integration']
-    },
+        tags: {
+          ru: ['Маркетинг', 'Лидогенерация', 'Аналитика', 'Ai интеграции'],
+          en: ['Marketing', 'Lead generation', 'Analytics', 'Ai integration']
+        },
         images: [
           'assets/portfolio-anzhee-1.webp',
           'assets/portfolio-anzhee-2.webp'
@@ -1536,10 +1628,8 @@ PARTICLES
     // --- Вспомогательные функции ---
     function getLocalizedData(project, field) {
         if (typeof project[field] === 'object' && project[field] !== null) {
-            // Если поле — объект с переводами
             return project[field][lang] || project[field]['ru'];
         }
-        // Если поле — строка или массив, возвращаем как есть
         return project[field];
     }
 
@@ -1552,6 +1642,13 @@ PARTICLES
             ? projects 
             : projects.filter(p => p.id === filter);
         
+        if (filtered.length === 0) {
+            grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:3rem;color:rgba(255,255,255,0.4);">
+                ${lang === 'ru' ? 'Нет проектов в этой категории' : 'No projects in this category'}
+            </div>`;
+            return;
+        }
+        
         grid.innerHTML = filtered.map((p, index) => {
             const title = getLocalizedData(p, 'title');
             const shortDesc = getLocalizedData(p, 'shortDesc');
@@ -1561,7 +1658,7 @@ PARTICLES
             return `
             <div class="portfolio-card" data-project="${p.id}" style="animation-delay:${index * 0.1}s">
                 <div class="portfolio-card__thumb">
-                    <img src="${p.thumb}" alt="${title}" loading="lazy" 
+                    <img src="${p.thumb}" alt="${title}" loading="lazy" width="340" height="191"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                     <div class="placeholder" style="display:none;">📷 ${p.company}</div>
                 </div>
@@ -1578,7 +1675,6 @@ PARTICLES
             `;
         }).join('');
 
-        // Добавляем обработчики кликов
         document.querySelectorAll('.portfolio-card').forEach(card => {
             card.addEventListener('click', () => {
                 const projectId = card.dataset.project;
@@ -1616,7 +1712,7 @@ PARTICLES
                         </div>
                         <div class="portfolio-modal__images">
                             ${project.images.map(img => `
-                                <img src="${img}" alt="${project.company}" loading="lazy" 
+                                <img src="${img}" alt="${project.company}" loading="lazy" width="400" height="250"
                                      onerror="this.style.display='none'">
                             `).join('')}
                         </div>
@@ -1648,7 +1744,6 @@ PARTICLES
     function updatePortfolioLanguage() {
         lang = window.currentLang || 'ru';
         
-        // Обновляем заголовки и подписи
         const data = window.data && window.data[lang] ? window.data[lang] : window.data?.ru;
         if (data) {
             const titleEl = document.getElementById('portfolioTitle');
@@ -1657,7 +1752,6 @@ PARTICLES
             if (subEl) subEl.innerHTML = data.portfolioSub || '<p>Реальные проекты, в которых я участвовал как руководитель и стратег. Каждый кейс — это система, которую мы выстроили и развили.</p>';
         }
         
-        // Перерисовываем проекты
         const activeFilter = document.querySelector('.portfolio-filter-btn.active');
         const filter = activeFilter ? activeFilter.dataset.filter : 'all';
         renderProjects(filter);
@@ -1702,20 +1796,17 @@ PARTICLES
         renderProjects('all');
         initCaseLinks();
         
-        // Слушаем событие смены языка
         document.addEventListener('languageChanged', updatePortfolioLanguage);
         
         console.log('✅ Портфолио инициализировано, проектов:', projects.length);
     }
 
-    // Запускаем, если DOM загружен
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
     }
 
-    // Делаем функцию обновления глобальной
     window.updatePortfolioLanguage = updatePortfolioLanguage;
   })();
 </script>
