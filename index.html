@@ -31,8 +31,26 @@
   <meta name="twitter:description" content="Бизнес, маркетинг, стратегия. 14+ лет практики." />
   <meta name="twitter:image" content="https://latters8.github.io/ExecutiveCasebook/assets/og-image.jpg" />
 
-   <!-- ===== STYLES ===== -->
+  <!-- ===== STYLES ===== -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- ===== PRELOAD КРИТИЧЕСКИХ РЕСУРСОВ ===== -->
+  <!-- Шрифты Inter (основной шрифт) -->
+  <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Шрифты Manrope (акцентный шрифт) -->
+  <link rel="preload" href="assets/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Manrope-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Manrope-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- LCP-изображение (портрет в прелоадере и hero) -->
+  <link rel="preload" href="assets/picture.webp" as="image" fetchpriority="high">
+
+  <!-- Основной CSS -->
+  <link rel="preload" href="styles.css" as="style">
 
   <style>
     body {
@@ -70,7 +88,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      font-family: 'Manrope', 'Inter', sans-serif;
+      font-family: 'Inter', sans-serif;
       transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), visibility 0.9s;
     }
     #preloader.pl-hidden {
@@ -206,7 +224,7 @@
       padding-bottom: 9vh;
     }
     #pl-name {
-      font-family:'Manrope','Inter',sans-serif;
+      font-family:'Inter', sans-serif;
       font-size: clamp(1.6rem,3.4vw,3.2rem);
       font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase;
       color: #F3F4F6; position: absolute; bottom: 21vh; white-space: nowrap;
@@ -230,7 +248,7 @@
       100%    { opacity:0; }
     }
     #pl-headline {
-      font-family:'Manrope','Inter',sans-serif;
+      font-family:'Inter', sans-serif;
       font-size: clamp(1rem,2vw,1.8rem); font-weight:300;
       letter-spacing:0.08em; color:#F3F4F6;
       text-align:center; line-height:1.5; position:absolute; bottom:14.5vh;
@@ -638,7 +656,7 @@ PRELOADER / INTRO SCREEN — РУСИФИЦИРОВАННЫЙ
     <div id="pl-portrait-wrap">
       <div id="pl-glow"></div>
       <div id="pl-ring"></div>
-      <img id="pl-portrait" src="assets/picture.webp" alt="Владимир Барбашин" decoding="async" width="420" height="620" fetchpriority="high"> 
+      <img id="pl-portrait" src="assets/picture.webp" alt="Владимир Барбашин" decoding="async" width="420" height="620" fetchpriority="high">
     </div>
   </div>
 
