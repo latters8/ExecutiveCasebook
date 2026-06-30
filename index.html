@@ -204,28 +204,28 @@
       filter: contrast(1.03) saturate(0.92);
     }
 
-    /* ── Panels (ОПТИМИЗИРОВАННЫЕ) ── */
-    #pl-panels {
-      position: absolute; inset: 0; z-index: 5; pointer-events: none;
-    }
-    .pl-panel {
-      position: absolute;
-      background: rgba(15,25,40,0.55);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(212,175,55,0.13);
-      border-radius: 10px;
-      padding: clamp(10px,1.3vw,18px) clamp(14px,1.8vw,26px);
-      display: flex; flex-direction: column; gap: 3px;
-      opacity: 0;
-      box-shadow: 0 0 0 1px rgba(212,175,55,0.04) inset, 0 12px 40px rgba(0,0,0,0.5);
-      animation: plPanelFloat 10s ease-in-out infinite;
-    }
-    @keyframes plPanelFloat {
-      0%   { opacity:0; transform:scale(0.96); }
-      10%  { opacity:1; transform:scale(1); }
-      95%  { opacity:1; transform:scale(1); }
-      100% { opacity:0; transform:scale(1); }
-    }
+/* ── Panels (ОПТИМИЗИРОВАННЫЕ) ── */
+#pl-panels {
+  position: absolute; inset: 0; z-index: 5; pointer-events: none;
+}
+.pl-panel {
+  position: absolute;
+  background: rgba(15,25,40,0.55);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(212,175,55,0.13);
+  border-radius: 10px;
+  padding: clamp(10px,1.3vw,18px) clamp(14px,1.8vw,26px);
+  display: flex; flex-direction: column; gap: 3px;
+  opacity: 0;
+  box-shadow: 0 0 0 1px rgba(212,175,55,0.04) inset, 0 12px 40px rgba(0,0,0,0.5);
+  animation: plPanelFloat 10s ease-in-out infinite;
+}
+@keyframes plPanelFloat {
+  0%   { opacity:0; transform:scale(0.96); }
+  15%  { opacity:1; transform:scale(1); }
+  95%  { opacity:1; transform:scale(1); }
+  100% { opacity:0; transform:scale(1); }
+}
 
     /* Расположение панелей с плавными задержками */
     .pl-p1{ left:4%;  top:10%; --fx:-6px; --fy:-4px; animation-delay:0s; }
