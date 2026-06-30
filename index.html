@@ -31,7 +31,7 @@
   <meta name="twitter:description" content="Бизнес, маркетинг, стратегия. 14+ лет практики." />
   <meta name="twitter:image" content="https://latters8.github.io/ExecutiveCasebook/assets/og-image.jpg" />
 
-  <!-- ===== CRITICAL RESOURCES (загружаются в первую очередь) ===== -->
+  <!-- ===== STYLES ===== -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- ===== PRELOAD КРИТИЧЕСКИХ РЕСУРСОВ ===== -->
@@ -52,13 +52,13 @@
   <!-- Основной CSS -->
   <link rel="preload" href="styles.css" as="style">
 
-<!-- ===== СТОРОННИЕ СЕРВИСЫ (preconnect после критических ресурсов) ===== -->
-<link rel="preconnect" href="https://mc.yandex.ru">
-<link rel="preconnect" href="https://mc.yandex.com">
+  <!-- ===== СТОРОННИЕ СЕРВИСЫ (preconnect после критических ресурсов) ===== -->
+  <link rel="preconnect" href="https://mc.yandex.ru">
+  <link rel="preconnect" href="https://mc.yandex.com">
 
-<!-- ===== DNS-PREFETCH ДЛЯ СТОРОННИХ СЕРВИСОВ (fallback для старых браузеров) ===== -->
-<link rel="dns-prefetch" href="https://mc.yandex.ru">
-<link rel="dns-prefetch" href="https://mc.yandex.com">
+  <!-- ===== DNS-PREFETCH (fallback для старых браузеров) ===== -->
+  <link rel="dns-prefetch" href="https://mc.yandex.ru">
+  <link rel="dns-prefetch" href="https://mc.yandex.com">
 
   <!-- ===== YANDEX METRIKA ===== -->
   <script type="text/javascript">
@@ -97,8 +97,9 @@
       }
     }
 
+
     /* ══════════════════════════════════════
-       PRELOADER — РУСИФИЦИРОВАННАЯ ВЕРСИЯ
+       PRELOADER — РУСИФИЦИРОВАННАЯ ВЕРСИЯ (ОПТИМИЗИРОВАННАЯ)
     ══════════════════════════════════════ */
     #preloader {
       position: fixed;
@@ -111,6 +112,7 @@
       overflow: hidden;
       font-family: 'Inter', sans-serif;
       transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), visibility 0.9s;
+      will-change: transform, opacity;
     }
     #preloader.pl-hidden {
       opacity: 0;
@@ -156,7 +158,7 @@
     #pl-portrait-wrap {
       position: relative;
       width: min(36vw, 400px);
-      animation: plPortraitIn 1.8s cubic-bezier(0.22,1,0.36,1) forwards;
+      animation: plPortraitIn 0.6s cubic-bezier(0.22,1,0.36,1) forwards;
       opacity: 0;
     }
     @keyframes plPortraitIn {
@@ -197,7 +199,7 @@
       filter: contrast(1.03) saturate(0.92);
     }
 
-    /* ── Panels ── */
+    /* ── Panels (ОПТИМИЗИРОВАННЫЕ) ── */
     #pl-panels {
       position: absolute; inset: 0; z-index: 5; pointer-events: none;
     }
@@ -214,22 +216,21 @@
       animation: plPanelFloat 10s ease-in-out infinite;
     }
     @keyframes plPanelFloat {
-      0%,28%{ opacity:0; transform:translate(0,0) scale(0.96); }
-      36%   { opacity:1; transform:translate(0,0) scale(1); }
-      64%   { opacity:1; transform:translate(var(--fx,0px), var(--fy,0px)); }
-      72%   { opacity:0; }
-      100%  { opacity:0; }
+      0%   { opacity:0; transform:scale(0.96); }
+      5%   { opacity:1; transform:scale(1); }
+      95%  { opacity:1; transform:scale(1); }
+      100% { opacity:0; transform:scale(1); }
     }
 
-    /* Расположение панелей с русскими данными */
+    /* Расположение панелей с ускоренными задержками */
     .pl-p1{ left:4%;  top:10%; --fx:-6px; --fy:-4px; animation-delay:0s; }
-    .pl-p2{ left:3%;  top:42%; --fx:-5px; --fy: 6px; animation-delay:0.3s; }
-    .pl-p3{ right:4%; top:8%; --fx: 6px; --fy:-5px; animation-delay:0.2s; }
-    .pl-p4{ right:3%; top:40%; --fx: 5px; --fy: 7px; animation-delay:0.5s; }
-    .pl-p5{ left:50%; top:5%;  transform:translateX(-50%); --fx:0px; --fy:-5px; animation-delay:0.15s; min-width:clamp(200px,28vw,360px); text-align:center; }
-    .pl-p6{ left:4%;  top:74%; --fx:-6px; --fy:4px; animation-delay:0.6s; }
-    .pl-p7{ right:4%; top:72%; --fx:6px; --fy:5px; animation-delay:0.7s; }
-    .pl-p8{ left:50%; top:88%; transform:translateX(-50%); --fx:0px; --fy:0px; animation-delay:0.8s; min-width:clamp(160px,24vw,300px); text-align:center; }
+    .pl-p2{ left:3%;  top:42%; --fx:-5px; --fy: 6px; animation-delay:0.05s; }
+    .pl-p3{ right:4%; top:8%; --fx: 6px; --fy:-5px; animation-delay:0.02s; }
+    .pl-p4{ right:3%; top:40%; --fx: 5px; --fy: 7px; animation-delay:0.08s; }
+    .pl-p5{ left:50%; top:5%;  transform:translateX(-50%); --fx:0px; --fy:-5px; animation-delay:0.04s; min-width:clamp(200px,28vw,360px); text-align:center; }
+    .pl-p6{ left:4%;  top:74%; --fx:-6px; --fy:4px; animation-delay:0.1s; }
+    .pl-p7{ right:4%; top:72%; --fx:6px; --fy:5px; animation-delay:0.12s; }
+    .pl-p8{ left:50%; top:88%; transform:translateX(-50%); --fx:0px; --fy:0px; animation-delay:0.15s; min-width:clamp(160px,24vw,300px); text-align:center; }
 
     .pl-label { font-size:clamp(0.4rem,0.6vw,0.52rem); letter-spacing:0.3em; text-transform:uppercase; color:#D4AF37; font-weight:500; }
     .pl-value { font-size:clamp(1rem,1.7vw,1.5rem); font-weight:200; color:#F3F4F6; letter-spacing:0.03em; line-height:1.1; }
@@ -255,12 +256,14 @@
     #pl-title {
       font-size: clamp(0.6rem,1vw,0.84rem); letter-spacing: 0.4em; text-transform: uppercase;
       color: #D4AF37; position: absolute; bottom: 17.2vh; white-space: nowrap;
-      animation: plS1Text 10s ease-in-out infinite; animation-delay:0.15s;
+      animation: plS1Text 10s ease-in-out infinite;
+      animation-delay:0s;
     }
     #pl-tags {
       font-size: clamp(0.5rem,0.78vw,0.68rem); letter-spacing: 0.28em; text-transform: uppercase;
       color: rgba(243,244,246,0.38); position: absolute; bottom: 14.8vh; white-space: nowrap;
-      animation: plS1Text 10s ease-in-out infinite; animation-delay:0.3s;
+      animation: plS1Text 10s ease-in-out infinite;
+      animation-delay:0s;
     }
     @keyframes plS1Text {
       0%      { opacity:0; transform:translateY(10px); }
@@ -1178,10 +1181,10 @@ PARTICLES
 <!-- ═══ PRELOADER SCRIPT ═══ -->
 <script>
   // ══════════════════════════════════════
-  // PRELOADER
+  // PRELOADER (ОПТИМИЗИРОВАННЫЙ)
   // ══════════════════════════════════════
   (function() {
-    var DURATION = 3000; // 3 seconds (one full loop)
+    var DURATION = 4000; // 4 seconds — карточки успевают появиться
     var pl = document.getElementById('preloader');
     var body = document.body;
     if (!pl) return;
@@ -1259,7 +1262,7 @@ PARTICLES
       }, 950);
     }
 
-    // Auto-dismiss after 10s
+    // Auto-dismiss after 4s
     setTimeout(dismiss, DURATION);
 
     // Skip button
@@ -1400,7 +1403,7 @@ PARTICLES
   })();
 </script>
 
-<!-- ═══ PRELOADER SCRIPT ═══ -->
+<!-- ═══ СКРИПТ ДЛЯ ПОРТФОЛИО ═══ -->
 <script>
   (function initPortfolio() {
     // Определяем текущий язык
