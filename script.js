@@ -120,10 +120,10 @@ const data={ru:{heroTag:"14+ лет практики \xb7 B2B \xb7 B2C \xb7 Busi
     </div>
   `).join(""),setTimeout(()=>{a.querySelectorAll(".competency-card").forEach(e=>e.classList.add("visible"))},100)}function renderFuture(){let e=getLangData();document.getElementById("futureTitle").innerHTML=e.futureTitle,document.getElementById("futureP1").textContent=e.futureP1,document.getElementById("futureP2").textContent=e.futureP2,document.getElementById("futureP3").innerHTML=e.futureP3}function renderContact(){let e=getLangData();document.getElementById("contactTitle").innerHTML=e.contactTitle,document.getElementById("contactP1").textContent=e.contactP1,document.getElementById("contactP2").textContent=e.contactP2,document.getElementById("contactP3").textContent=e.contactP3,document.getElementById("nameLabel").textContent=e.nameLabel||"Your name",document.getElementById("emailLabel").textContent=e.emailLabel||"Email",document.getElementById("msgLabel").textContent=e.msgLabel,document.getElementById("name").setAttribute("placeholder",e.namePlaceholder||"What should I call you?"),document.getElementById("email").setAttribute("placeholder",e.emailPlaceholder||"your@email.com"),document.getElementById("sendBtn").textContent=e.sendBtn,document.getElementById("message").setAttribute("placeholder",e.textareaPlaceholder),document.getElementById("valuesTitle").textContent=e.valuesTitle;let t=["v1t","v2t","v3t","v4t","v5t","v6t"];e.values.forEach((e,a)=>{t[a]&&(document.getElementById(t[a]).textContent=e)}),document.getElementById("quote1").textContent=e.quote1,document.getElementById("quote2").textContent=e.quote2}function renderBrands(){let e=getLangData(),t=document.getElementById("brandsLabel"),a=document.getElementById("brandsSub"),n=document.getElementById("brandsTrack");if(t&&(t.textContent=e.brandsLabel),a&&(a.textContent=e.brandsSub),!n||n.children.length>0)return;let r=e.brandsList||[];n.innerHTML=[...r,...r].map(e=>`<span class="brand-slide">${e}</span>`).join("")}function renderPortfolio(e){let t=getLangData(),a=document.getElementById("portfolioGrid");if(!a)return;let n=document.getElementById("portfolioTitle"),r=document.getElementById("portfolioSub");n&&(n.innerHTML=t.portfolioTitle||'Портфолио <span class="highlight">проектов</span>'),r&&(r.innerHTML=t.portfolioSub||"<p>Реальные проекты, в которых я участвовал как руководитель и стратег. Каждый кейс — это система, которую мы выстроили и развили.</p>");let s=e||currentPortfolioFilter||"all",o="all"===s?portfolioData:portfolioData.filter(e=>e.id===s);if(0===o.length){a.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:3rem;color:rgba(255,255,255,0.4);">
       ${"ru"===currentLang?"Нет проектов в этой категории":"No projects in this category"}
-    </div>`;return}a.innerHTML=o.map((e,t)=>{let a=e.title[currentLang]||e.title.ru,n=e.shortDesc[currentLang]||e.shortDesc.ru,r;return`
+    </div>`;return}let i="ru"===currentLang?"Подробнее":"View case";a.innerHTML=o.map((e,t)=>{let a=e.title[currentLang]||e.title.ru,n=e.shortDesc[currentLang]||e.shortDesc.ru,r;return`
       <div class="portfolio-card" data-project="${e.id}" style="animation-delay:${.1*t}s">
         <div class="portfolio-card__thumb">
-          <img src="${e.thumb}" alt="${a}" loading="lazy" 
+          <img src="${e.thumb}" alt="${a}" loading="lazy" width="340" height="191"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
           <div class="placeholder" style="display:none;">📷 ${e.company}</div>
         </div>
@@ -134,6 +134,9 @@ const data={ru:{heroTag:"14+ лет практики \xb7 B2B \xb7 B2C \xb7 Busi
           <div class="portfolio-card__meta">
             <span>📈 ${(e.achievements[currentLang]||e.achievements.ru)[0]?.number||""}</span>
             <span>🏷️ ${(e.tags[currentLang]||e.tags.ru)[0]||""}</span>
+          </div>
+          <div class="portfolio-card__link">
+            <span>${i} →</span>
           </div>
         </div>
       </div>
@@ -155,7 +158,7 @@ const data={ru:{heroTag:"14+ лет практики \xb7 B2B \xb7 B2C \xb7 Busi
           </div>
           <div class="portfolio-modal__images">
             ${e.images.map(t=>`
-              <img src="${t}" alt="${e.company}" loading="lazy" 
+              <img src="${t}" alt="${e.company}" loading="lazy" width="400" height="250"
                    onerror="this.style.display='none'">
             `).join("")}
           </div>
