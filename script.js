@@ -531,7 +531,7 @@ const portfolioData = [
           <div><span style="color:var(--accent,#D4AF37);font-weight:600;">+20%</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">рост продаж Fender год к году</span></div>
           <div><span style="color:var(--accent,#D4AF37);font-weight:600;">40+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">розничных магазинов сети</span></div>
           <div><span style="color:var(--accent,#D4AF37);font-weight:600;">300+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">сотрудников в группе компаний</span></div>
-          <div><span style="color:var(--accent,#D4AF37);font-weight:600;">1 500+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">дилеров и партнеров</span></div>
+          <div><span style="color:var(--accent,#D4AF37);font-weight:600;">1 100+</span><br><span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">дилеров и партнеров</span></div>
         </div>
         
         <p style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);">🔗 <a href="https://attrade.ru/about/" target="_blank" style="color:var(--accent, #D4AF37);">attrade.ru/about/</a></p>
